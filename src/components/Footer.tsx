@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 
@@ -11,12 +10,12 @@ const Footer = () => {
           <div className="col-span-1">
             <Link to="/" className="inline-block mb-4">
               <span className="font-semibold text-xl font-['Playfair_Display']">
-                Élégance
-                <span className="text-french-gold">Française</span>
+                AG Stratégie
+                <span className="text-french-gold">Patrimoine</span>
               </span>
             </Link>
             <p className="text-sm text-gray-300 mb-6">
-              Découvrez l'élégance à la française avec notre collection exclusive.
+              Accompagnement personnalisé pour la gestion et l'optimisation de votre patrimoine.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-french-gold transition-colors">
@@ -104,7 +103,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-10 pt-6">
           <p className="text-center text-xs text-gray-400">
-            © {new Date().getFullYear()} Élégance Française. Tous droits réservés.
+            © {new Date().getFullYear()} AG Stratégie Patrimoine. Tous droits réservés.
           </p>
         </div>
       </div>
