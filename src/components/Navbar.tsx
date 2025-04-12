@@ -11,9 +11,8 @@ const Navbar = () => {
   
   const navigation = [
     { name: "Accueil", href: "/" },
-    { name: "Produits", href: "/produits" },
+    { name: "Services", href: "/services" },
     { name: "Blog", href: "/blog" },
-    { name: "FAQ", href: "/faq" },
   ];
   
   const toggleMenu = () => {
