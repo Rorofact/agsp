@@ -12,7 +12,6 @@ const Navbar = () => {
   const navigation = [
     { name: "Accueil", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Qui suis-je", href: "/about" },
     { name: "Blog", href: "/blog" },
   ];
   
