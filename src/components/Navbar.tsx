@@ -12,6 +12,7 @@ const Navbar = () => {
   const navigation = [
     { name: "Accueil", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Qui suis-je", href: "/about" },
     { name: "Blog", href: "/blog" },
   ];
   
@@ -26,8 +27,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="text-french-navy font-semibold text-xl font-['Playfair_Display']">
-              Élégance
-              <span className="text-french-gold">Française</span>
+              AG Stratégie
+              <span className="text-french-gold">Patrimoine</span>
             </span>
           </Link>
           

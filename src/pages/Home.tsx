@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Heart, Star, TrendingUp } from "lucide-react";
+import { ShieldCheck, TrendingUp, Scale, BarChart4 } from "lucide-react";
 
 const Home = () => {
   return (
@@ -11,16 +11,16 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Playfair_Display']">
-              Découvrez l'Art de Vivre à la Française
+              Construire et Protéger Votre Patrimoine
             </h1>
             <p className="text-xl max-w-3xl mb-8">
-              Une collection exclusive qui célèbre l'élégance, la sophistication et le savoir-faire français.
+              Des solutions personnalisées pour optimiser votre stratégie patrimoniale et assurer votre avenir financier.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button className="bg-french-gold hover:bg-french-gold/90 text-french-navy text-lg px-8 py-6">
-                Nos Produits
+                Nos Services
               </Button>
-              <Button variant="outline" className="border-white hover:bg-white/10 text-white text-lg px-8 py-6">
+              <Button variant="outline" className="border-white hover:bg-white/10 text-french-gold text-lg px-8 py-6">
                 En Savoir Plus
               </Button>
             </div>
@@ -32,9 +32,9 @@ const Home = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-french-navy mb-4">Pourquoi Nous Choisir</h2>
+            <h2 className="text-3xl font-bold text-french-navy mb-4">Notre Expertise</h2>
             <p className="text-french-gray max-w-2xl mx-auto">
-              Nous nous engageons à offrir des produits de la plus haute qualité, fabriqués avec passion et expertise.
+              Une approche complète et sur mesure pour répondre à tous vos besoins en gestion patrimoniale.
             </p>
           </div>
           
@@ -43,11 +43,11 @@ const Home = () => {
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-french-cream p-3 rounded-full mb-4">
-                    <Award className="h-8 w-8 text-french-navy" />
+                    <ShieldCheck className="h-8 w-8 text-french-navy" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Qualité Premium</h3>
+                  <h3 className="font-semibold text-xl mb-2">Protection Patrimoniale</h3>
                   <p className="text-french-gray">
-                    Des produits fabriqués avec les meilleurs matériaux et un souci du détail exceptionnel.
+                    Sécurisez votre patrimoine et protégez les intérêts de vos proches avec nos solutions d'assurance et de prévoyance.
                   </p>
                 </div>
               </CardContent>
@@ -59,9 +59,9 @@ const Home = () => {
                   <div className="bg-french-cream p-3 rounded-full mb-4">
                     <TrendingUp className="h-8 w-8 text-french-navy" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Tendances Actuelles</h3>
+                  <h3 className="font-semibold text-xl mb-2">Investissements</h3>
                   <p className="text-french-gray">
-                    Des créations qui suivent les dernières tendances tout en conservant un charme intemporel.
+                    Optimisez votre rendement avec des placements diversifiés et adaptés à votre profil d'investisseur.
                   </p>
                 </div>
               </CardContent>
@@ -71,11 +71,11 @@ const Home = () => {
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-french-cream p-3 rounded-full mb-4">
-                    <Star className="h-8 w-8 text-french-navy" />
+                    <Scale className="h-8 w-8 text-french-navy" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Savoir-faire Français</h3>
+                  <h3 className="font-semibold text-xl mb-2">Optimisation Fiscale</h3>
                   <p className="text-french-gray">
-                    L'excellence artisanale française au service de votre satisfaction.
+                    Réduisez votre charge fiscale grâce à des stratégies légales et efficaces adaptées à votre situation.
                   </p>
                 </div>
               </CardContent>
@@ -85,11 +85,11 @@ const Home = () => {
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-french-cream p-3 rounded-full mb-4">
-                    <Heart className="h-8 w-8 text-french-navy" />
+                    <BarChart4 className="h-8 w-8 text-french-navy" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-2">Service Client</h3>
+                  <h3 className="font-semibold text-xl mb-2">Conseil Personnalisé</h3>
                   <p className="text-french-gray">
-                    Une équipe dévouée pour vous accompagner et répondre à toutes vos questions.
+                    Un accompagnement sur mesure pour définir et atteindre vos objectifs financiers à court et long terme.
                   </p>
                 </div>
               </CardContent>
@@ -104,14 +104,14 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0 md:mr-8">
               <h2 className="text-3xl font-bold text-french-navy mb-4">
-                Prêt à découvrir notre collection ?
+                Prêt à construire votre stratégie patrimoniale ?
               </h2>
               <p className="text-french-gray max-w-lg">
-                Explorez notre gamme de produits exclusifs et laissez-vous séduire par l'élégance à la française.
+                Prenez rendez-vous pour un bilan patrimonial gratuit et découvrez comment nous pouvons vous accompagner.
               </p>
             </div>
             <Button className="bg-french-navy hover:bg-french-navy/90 text-white text-lg px-8 py-6">
-              Voir Nos Produits
+              Prendre Rendez-vous
             </Button>
           </div>
         </div>
