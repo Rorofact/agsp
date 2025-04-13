@@ -24,6 +24,9 @@ const Navbar = () => {
   const navigation = [
     { name: "Accueil", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Carrière", href: "/carriere" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Assurance Emprunteur", href: "/assurance-emprunteur" },
     { name: "Blog", href: "/blog" },
   ];
   
