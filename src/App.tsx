@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 import Chatbox from "./components/Chatbox";
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
+            <Route path="/rendez-vous" element={<Appointment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbox />

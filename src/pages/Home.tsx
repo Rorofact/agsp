@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShieldCheck, TrendingUp, Scale, BarChart4, Medal, Mail, PhoneCall, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -18,10 +19,10 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button className="bg-french-gold hover:bg-french-gold/90 text-french-navy text-lg px-8 py-6">
-                Nos Services
+                <Link to="/services">Nos Services</Link>
               </Button>
-              <Button variant="outline" className="border-white hover:bg-white/10 text-white text-lg px-8 py-6">
-                En Savoir Plus
+              <Button variant="outline" className="border-white hover:bg-white/10 text-french-gold text-lg px-8 py-6">
+                <Link to="/rendez-vous">Prendre rendez-vous</Link>
               </Button>
             </div>
           </div>
@@ -227,7 +228,7 @@ const Home = () => {
               </p>
             </div>
             <Button className="bg-french-navy hover:bg-french-navy/90 text-white text-lg px-8 py-6">
-              Prendre Rendez-vous
+              <Link to="/rendez-vous">Prendre Rendez-vous</Link>
             </Button>
           </div>
         </div>
