@@ -15,6 +15,7 @@ import Chatbox from "./components/Chatbox";
 import Carriere from "./pages/Carriere";
 import Solutions from "./pages/Solutions";
 import AssuranceEmprunteur from "./pages/AssuranceEmprunteur";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/carriere" element={<Carriere />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/assurance-emprunteur" element={<AssuranceEmprunteur />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbox />

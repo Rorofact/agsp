@@ -33,6 +33,39 @@ export type Database = {
         }
         Relationships: []
       }
+      messages_contact: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          lu: boolean | null
+          message: string
+          nom: string
+          prenom: string
+          telephone: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          lu?: boolean | null
+          message: string
+          nom: string
+          prenom: string
+          telephone?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          lu?: boolean | null
+          message?: string
+          nom?: string
+          prenom?: string
+          telephone?: string | null
+        }
+        Relationships: []
+      }
       offres_emploi: {
         Row: {
           date_publication: string | null
