@@ -16,67 +16,67 @@ interface BlogPost {
 }
 
 const Blog = () => {
-  // Sample blog post data
+  // Finance and real estate blog posts
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "L'Art de la Parfumerie Française",
-      excerpt: "Découvrez les secrets et l'histoire fascinante derrière la création des parfums français de renommée mondiale.",
-      image: "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Sophie Dubois",
+      title: "Les Fondamentaux de l'Investissement Immobilier en 2025",
+      excerpt: "Découvrez les bases essentielles pour réussir vos investissements immobiliers dans le contexte économique actuel.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Thomas Durand",
       date: "12 avril 2025",
-      readTime: "5 min",
-      category: "Art & Culture"
+      readTime: "8 min",
+      category: "Immobilier"
     },
     {
       id: 2,
-      title: "La Gastronomie Française : Un Patrimoine Mondial",
-      excerpt: "Une exploration des traditions culinaires françaises qui continuent d'influencer la gastronomie mondiale.",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Jean-Pierre Martin",
+      title: "Comment Optimiser sa Fiscalité en France",
+      excerpt: "Stratégies légales et astuces pour réduire votre imposition et maximiser votre patrimoine.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Sophie Martin",
       date: "5 avril 2025",
-      readTime: "7 min",
-      category: "Gastronomie"
+      readTime: "10 min",
+      category: "Fiscalité"
     },
     {
       id: 3,
-      title: "Les Secrets de la Mode Parisienne",
-      excerpt: "Comment adopter l'élégance et le style à la française dans votre garde-robe quotidienne.",
-      image: "https://images.unsplash.com/photo-1502208327471-d5dde4d78995?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Marie Lefevre",
+      title: "Les Erreurs à Éviter dans la Gestion de Portefeuille",
+      excerpt: "Analyse des pièges courants qui peuvent compromettre vos performances financières à long terme.",
+      image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Marc Leblanc",
       date: "28 mars 2025",
-      readTime: "6 min",
-      category: "Mode"
+      readTime: "7 min",
+      category: "Investissement"
     },
     {
       id: 4,
-      title: "Les Châteaux de la Loire : Joyaux du Patrimoine",
-      excerpt: "Voyage à travers l'histoire architecturale des plus beaux châteaux de la Loire, témoins de la Renaissance française.",
-      image: "https://images.unsplash.com/photo-1591289009723-aef0a1a8a211?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Philippe Durand",
+      title: "La Loi Pinel 2025 : Ce qui Change pour les Investisseurs",
+      excerpt: "Toutes les modifications du dispositif Pinel et comment les intégrer dans votre stratégie d'investissement.",
+      image: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Julie Dupont",
       date: "15 mars 2025",
-      readTime: "8 min",
-      category: "Voyage"
+      readTime: "9 min",
+      category: "Immobilier"
     },
     {
       id: 5,
-      title: "L'Art du Vin : Comprendre les Terroirs Français",
-      excerpt: "Un guide pour comprendre les différentes régions viticoles françaises et leurs caractéristiques uniques.",
-      image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Claire Beaumont",
+      title: "Préparer sa Retraite : Stratégies Patrimoniales Efficaces",
+      excerpt: "Comment construire un patrimoine solide pour assurer vos revenus pendant la retraite.",
+      image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Pierre Moreau",
       date: "2 mars 2025",
-      readTime: "10 min",
-      category: "Gastronomie"
+      readTime: "11 min",
+      category: "Patrimoine"
     },
     {
       id: 6,
-      title: "La Lavande de Provence : Plus qu'un Parfum",
-      excerpt: "Les bienfaits thérapeutiques et cosmétiques de cette plante emblématique du Sud de la France.",
-      image: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Émilie Moreau",
+      title: "Les SCPI : Une Alternative aux Investissements Immobiliers Directs",
+      excerpt: "Tout ce que vous devez savoir sur les Sociétés Civiles de Placement Immobilier et leur place dans votre stratégie.",
+      image: "https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Hélène Girard",
       date: "20 février 2025",
-      readTime: "4 min",
-      category: "Bien-être"
+      readTime: "6 min",
+      category: "Immobilier"
     }
   ];
 
@@ -90,9 +90,9 @@ const Blog = () => {
     <div className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h1 className="page-title">Notre Blog</h1>
+          <h1 className="page-title">Notre Blog Financier</h1>
           <p className="subtitle">
-            Explorez nos articles sur l'art de vivre à la française, la culture, la gastronomie et bien plus encore.
+            Explorez nos articles sur la gestion de patrimoine, l'investissement immobilier et les stratégies financières.
           </p>
         </div>
         
@@ -180,7 +180,7 @@ const Blog = () => {
         <div className="mt-16 bg-french-cream rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold text-french-navy mb-4">Restez Informé</h3>
           <p className="text-french-gray mb-6 max-w-2xl mx-auto">
-            Abonnez-vous à notre newsletter pour recevoir les derniers articles et actualités directement dans votre boîte mail.
+            Abonnez-vous à notre newsletter pour recevoir les derniers articles et actualités sur la finance et l'immobilier.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
             <input 

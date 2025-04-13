@@ -17,71 +17,71 @@ interface Service {
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState("tous");
   
-  // Sample service data
+  // Finance and real estate services data
   const services: Service[] = [
     {
       id: 1,
-      name: "Consultation en Style",
+      name: "Consultation Patrimoniale",
       category: "conseil",
-      price: 89,
-      image: "https://images.unsplash.com/photo-1590736969955-71cc94c3b5d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Découvrez votre style personnel avec nos experts en mode française."
+      price: 150,
+      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Analyse complète de votre situation financière et conseils personnalisés pour optimiser votre patrimoine."
     },
     {
       id: 2,
-      name: "Création d'Accessoires",
-      category: "creation",
-      price: 125,
-      image: "https://images.unsplash.com/photo-1601370552761-d129028bd833?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Des accessoires sur mesure conçus avec savoir-faire et élégance."
+      name: "Stratégie d'Investissement",
+      category: "investissement",
+      price: 200,
+      image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Élaboration d'une stratégie d'investissement adaptée à vos objectifs et votre profil de risque."
     },
     {
       id: 3,
-      name: "Dégustation de Vins",
-      category: "gastronomie",
-      price: 45,
-      image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Une initiation aux grands crus et vins français par notre sommelier."
+      name: "Gestion de Portefeuille",
+      category: "gestion",
+      price: 250,
+      image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Suivi et optimisation régulière de vos placements financiers pour maximiser votre rendement."
     },
     {
       id: 4,
-      name: "Décoration d'Intérieur",
-      category: "maison",
-      price: 120,
-      image: "https://images.unsplash.com/photo-1595925889916-5ef8bfb5e349?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Transformez votre espace avec notre expertise en décoration à la française."
+      name: "Planification Retraite",
+      category: "conseil",
+      price: 180,
+      image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Préparation de votre avenir financier pour assurer une retraite sereine et confortable."
     },
     {
       id: 5,
-      name: "Atelier Parfumerie",
-      category: "atelier",
-      price: 75,
-      image: "https://images.unsplash.com/photo-1603006945432-d363264c5751?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Créez votre propre parfum guidé par un maître parfumeur."
+      name: "Investissement Immobilier",
+      category: "immobilier",
+      price: 220,
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Accompagnement dans l'acquisition de biens immobiliers à fort potentiel de rentabilité."
     },
     {
       id: 6,
-      name: "Cours de Cuisine",
-      category: "gastronomie",
-      price: 65,
-      image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Apprenez les secrets de la cuisine française avec nos chefs."
+      name: "Optimisation Fiscale",
+      category: "fiscalité",
+      price: 190,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Stratégies légales pour réduire votre charge fiscale et maximiser votre patrimoine."
     },
     {
       id: 7,
-      name: "Coaching d'Image",
-      category: "conseil",
-      price: 95,
-      image: "https://images.unsplash.com/photo-1519669011783-4eaa95fa1b7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Un accompagnement personnalisé pour révéler votre meilleur style."
+      name: "Défiscalisation Immobilière",
+      category: "immobilier",
+      price: 210,
+      image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Dispositifs Pinel, Denormandie, Malraux pour investir tout en réduisant vos impôts."
     },
     {
       id: 8,
-      name: "Création de Foulards",
-      category: "creation",
-      price: 110,
-      image: "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Des foulards en soie personnalisés selon vos goûts."
+      name: "Transmission de Patrimoine",
+      category: "succession",
+      price: 230,
+      image: "https://images.unsplash.com/photo-1586527317521-54e53e996909?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      description: "Préparation et optimisation de la transmission de votre patrimoine à vos héritiers."
     },
   ];
   
@@ -97,9 +97,9 @@ const Services = () => {
     <div className="py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h1 className="page-title">Nos Services</h1>
+          <h1 className="page-title">Nos Services Financiers</h1>
           <p className="subtitle">
-            Découvrez notre éventail de services français d'exception, fournis avec passion et savoir-faire.
+            Découvrez notre gamme de services d'expertise en gestion de patrimoine et investissement immobilier.
           </p>
         </div>
         
