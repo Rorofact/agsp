@@ -12,6 +12,9 @@ import About from "./pages/About";
 import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 import Chatbox from "./components/Chatbox";
+import Carriere from "./pages/Carriere";
+import Solutions from "./pages/Solutions";
+import AssuranceEmprunteur from "./pages/AssuranceEmprunteur";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,9 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="/rendez-vous" element={<Appointment />} />
+            <Route path="/carriere" element={<Carriere />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/assurance-emprunteur" element={<AssuranceEmprunteur />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbox />

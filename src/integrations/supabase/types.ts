@@ -9,7 +9,101 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      disponibilites: {
+        Row: {
+          created_at: string | null
+          date: string
+          disponible: boolean | null
+          heure: string
+          id: string
+        }
+        Insert: {
+          created_at?: string | null
+          date: string
+          disponible?: boolean | null
+          heure: string
+          id?: string
+        }
+        Update: {
+          created_at?: string | null
+          date?: string
+          disponible?: boolean | null
+          heure?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      offres_emploi: {
+        Row: {
+          date_publication: string | null
+          description: string
+          id: string
+          lieu: string
+          titre: string
+          type_contrat: string
+        }
+        Insert: {
+          date_publication?: string | null
+          description: string
+          id?: string
+          lieu: string
+          titre: string
+          type_contrat: string
+        }
+        Update: {
+          date_publication?: string | null
+          description?: string
+          id?: string
+          lieu?: string
+          titre?: string
+          type_contrat?: string
+        }
+        Relationships: []
+      }
+      rendez_vous: {
+        Row: {
+          created_at: string | null
+          disponibilite_id: string | null
+          email: string
+          id: string
+          message: string | null
+          nom: string
+          prenom: string
+          telephone: string
+          type_rdv: string
+        }
+        Insert: {
+          created_at?: string | null
+          disponibilite_id?: string | null
+          email: string
+          id?: string
+          message?: string | null
+          nom: string
+          prenom: string
+          telephone: string
+          type_rdv: string
+        }
+        Update: {
+          created_at?: string | null
+          disponibilite_id?: string | null
+          email?: string
+          id?: string
+          message?: string | null
+          nom?: string
+          prenom?: string
+          telephone?: string
+          type_rdv?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rendez_vous_disponibilite_id_fkey"
+            columns: ["disponibilite_id"]
+            isOneToOne: false
+            referencedRelation: "disponibilites"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
