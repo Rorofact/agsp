@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-french-navy text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="col-span-1">
             <Link to="/" className="inline-block mb-4">
@@ -68,28 +68,6 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Legal */}
-          <div className="col-span-1">
-            <h3 className="font-medium text-french-gold mb-4">Informations</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Conditions générales
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Politique de confidentialité
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Livraisons et retours
-                </a>
-              </li>
-            </ul>
-          </div>
-          
           {/* Contact */}
           <div className="col-span-1">
             <h3 className="font-medium text-french-gold mb-4">Contact</h3>
@@ -106,7 +84,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-french-gold" />
-                <span className="text-sm text-gray-300">contact@elegancefrancaise.fr</span>
+                <span className="text-sm text-gray-300">contact@agstrategiepatrimoine.fr</span>
               </li>
             </ul>
           </div>
