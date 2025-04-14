@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, User, CalendarIcon, Clock, Share2 } from 'lucide-react';
-import { NotFound } from '../NotFound';
+import NotFound from '../NotFound';
 
 interface BlogArticleProps {
   id: number;
@@ -97,7 +96,7 @@ const blogData: BlogArticleProps[] = [
 
 <p>3. <strong>Équilibre risque/avantage</strong> : Les investissements défiscalisants ne doivent pas être choisis uniquement pour leur avantage fiscal, mais aussi pour leur qualité intrinsèque et leur cohérence avec votre stratégie patrimoniale globale.</p>
 
-<p>4. <strong>Accompagnement professionnel</strong> : La complexité et l'évolution constante de la fiscalité française rendent souvent indispensable le recours à un conseiller en gestion de patrimoine ou un expert-comptable pour optimiser efficacement votre situation.</p>
+<p>4. <strong>Accompagnement professionnel</strong> : La complexité et l'évolution constante de la fiscalité française rend souvent indispensable le recours à un conseiller en gestion de patrimoine ou un expert-comptable pour optimiser efficacement votre situation.</p>
 
 <h2>Conclusion</h2>
 

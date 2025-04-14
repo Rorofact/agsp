@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar } from 'lucide-react';
-import { NotFound } from '../NotFound';
+import NotFound from '../NotFound';
 
 interface ServiceDetailProps {
   id: number;
@@ -20,7 +19,6 @@ interface ServiceDetailProps {
   }[];
 }
 
-// Database of services (in a real app, this would come from a backend)
 const servicesData: ServiceDetailProps[] = [
   {
     id: 1,
@@ -297,14 +295,11 @@ const servicesData: ServiceDetailProps[] = [
 ];
 
 const ServiceDetail = () => {
-  // Get the service ID from URL params
   const { id } = useParams<{ id: string }>();
   
-  // Find the service data based on ID
   const serviceId = parseInt(id || '0');
   const service = servicesData.find(s => s.id === serviceId);
   
-  // If service not found, display NotFound component
   if (!service) {
     return <NotFound />;
   }
@@ -312,7 +307,6 @@ const ServiceDetail = () => {
   return (
     <div className="py-12 px-4">
       <div className="container mx-auto">
-        {/* Breadcrumb */}
         <div className="mb-8">
           <Link to="/services" className="flex items-center text-french-navy hover:text-french-gold transition-colors">
             <ArrowLeft className="h-4 w-4 mr-2" />
