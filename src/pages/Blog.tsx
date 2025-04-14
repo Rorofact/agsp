@@ -129,9 +129,11 @@ const Blog = () => {
                     <span>{featuredPost.readTime}</span>
                   </div>
                 </div>
-                <Button className="w-fit bg-french-navy hover:bg-french-navy/90">
-                  Lire l'Article
-                </Button>
+                <Link to={`/blog/${featuredPost.id}`}>
+                  <Button className="w-fit bg-french-navy hover:bg-french-navy/90">
+                    Lire l'Article
+                  </Button>
+                </Link>
               </div>
             </div>
           </Card>
@@ -168,9 +170,11 @@ const Blog = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="ghost" className="text-french-navy hover:text-french-gold hover:bg-transparent p-0">
-                  Lire l'Article →
-                </Button>
+                <Link to={`/blog/${post.id}`}>
+                  <Button variant="ghost" className="text-french-navy hover:text-french-gold hover:bg-transparent p-0">
+                    Lire l'Article →
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}

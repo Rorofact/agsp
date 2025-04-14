@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Filter, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Service {
   id: number;
@@ -146,9 +147,11 @@ const Services = () => {
                         <p className="font-medium text-french-navy">{service.price} €</p>
                       </CardContent>
                       <CardFooter>
-                        <Button className="w-full bg-french-navy hover:bg-french-navy/90 gap-2">
-                          En savoir plus <ArrowRight className="h-4 w-4" />
-                        </Button>
+                        <Link to={`/services/${service.id}`}>
+                          <Button className="w-full bg-french-navy hover:bg-french-navy/90 gap-2">
+                            En savoir plus <ArrowRight className="h-4 w-4" />
+                          </Button>
+                        </Link>
                       </CardFooter>
                     </Card>
                   ))}

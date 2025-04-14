@@ -16,6 +16,8 @@ import Carriere from "./pages/Carriere";
 import Solutions from "./pages/Solutions";
 import AssuranceEmprunteur from "./pages/AssuranceEmprunteur";
 import Contact from "./pages/Contact";
+import ServiceDetail from "./pages/services/ServiceDetail";
+import BlogArticle from "./pages/blog/BlogArticle";
 
 // Solution detail pages
 import InvestissementLocatif from "./pages/solutions/InvestissementLocatif";
@@ -44,7 +46,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogArticle />} />
             <Route path="/about" element={<About />} />
             <Route path="/rendez-vous" element={<Appointment />} />
             <Route path="/carriere" element={<Carriere />} />
