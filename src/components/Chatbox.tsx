@@ -1,10 +1,11 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, Send, X, MinusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
   id: number;
@@ -20,11 +21,12 @@ const Chatbox = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+      text: "Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?",
       isUser: false,
       timestamp: new Date(),
     },
   ]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleChat = () => {
     if (isMinimized) {
@@ -38,7 +40,7 @@ const Chatbox = () => {
     setIsMinimized(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!message.trim()) return;
@@ -53,27 +55,43 @@ const Chatbox = () => {
     
     setMessages([...messages, newUserMessage]);
     setMessage("");
+    setIsLoading(true);
     
-    // Simulate response (in a real app, you'd call an API here)
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('generate-chat-response', {
+        body: JSON.stringify({ message })
+      });
+
+      if (error) throw error;
+
       const botResponse: Message = {
         id: messages.length + 2,
-        text: "Merci pour votre message. Un conseiller vous répondra prochainement.",
+        text: data.response,
         isUser: false,
         timestamp: new Date(),
       };
+
       setMessages(prev => [...prev, botResponse]);
-    }, 1000);
+    } catch (error) {
+      console.error('Erreur lors de la génération de la réponse:', error);
+      const errorMessage: Message = {
+        id: messages.length + 2,
+        text: "Désolé, je n'ai pas pu générer de réponse pour le moment.",
+        isUser: false,
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
   };
   
-  // Format timestamp to HH:MM
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
   };
 
   return (
     <>
-      {/* Chat button */}
       <Button
         onClick={toggleChat}
         className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-french-navy hover:bg-french-navy/90 shadow-lg z-30"
@@ -81,7 +99,6 @@ const Chatbox = () => {
         <MessageCircle size={24} />
       </Button>
 
-      {/* Chat window */}
       <div
         className={cn(
           "fixed bottom-24 right-6 w-80 z-30 transition-all duration-300 ease-in-out transform",
@@ -90,7 +107,6 @@ const Chatbox = () => {
         )}
       >
         <Card className="overflow-hidden border border-french-navy/20 shadow-lg">
-          {/* Chat header */}
           <div className="bg-french-navy text-white p-3 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <MessageCircle size={18} />
@@ -108,7 +124,6 @@ const Chatbox = () => {
 
           {!isMinimized && (
             <>
-              {/* Chat messages */}
               <div className="h-64 overflow-y-auto p-3 bg-gray-50">
                 {messages.map((msg) => (
                   <div
@@ -129,17 +144,27 @@ const Chatbox = () => {
                     </div>
                   </div>
                 ))}
+                {isLoading && (
+                  <div className="text-center text-french-gray text-sm italic">
+                    En train de générer une réponse...
+                  </div>
+                )}
               </div>
 
-              {/* Chat input */}
               <form onSubmit={handleSubmit} className="p-3 bg-white border-t flex gap-2">
                 <Input
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Tapez votre message..."
                   className="flex-grow"
+                  disabled={isLoading}
                 />
-                <Button type="submit" size="sm" className="bg-french-navy hover:bg-french-navy/90">
+                <Button 
+                  type="submit" 
+                  size="sm" 
+                  className="bg-french-navy hover:bg-french-navy/90"
+                  disabled={isLoading}
+                >
                   <Send size={16} />
                 </Button>
               </form>
