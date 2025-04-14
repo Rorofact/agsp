@@ -10,75 +10,88 @@ const solutionsData = {
     {
       title: "Investissement Locatif",
       description: "Générez des revenus complémentaires et constituez un patrimoine pérenne grâce à l'immobilier locatif.",
-      icon: <Building2 className="h-10 w-10 text-french-gold" />
+      icon: <Building2 className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/investissement-locatif"
     },
     {
       title: "SCPI",
       description: "Investissez dans l'immobilier sans contraintes de gestion avec nos solutions de placement collectif.",
-      icon: <Building2 className="h-10 w-10 text-french-gold" />
+      icon: <Building2 className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/scpi"
     },
     {
       title: "Loi Pinel",
       description: "Réduisez votre imposition tout en investissant dans l'immobilier neuf grâce au dispositif Pinel.",
-      icon: <Building2 className="h-10 w-10 text-french-gold" />
+      icon: <Building2 className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/loi-pinel"
     }
   ],
   placements: [
     {
       title: "Assurance-vie",
       description: "Solution d'épargne flexible offrant des avantages fiscaux et une transmission facilitée.",
-      icon: <TrendingUp className="h-10 w-10 text-french-gold" />
+      icon: <TrendingUp className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/assurance-vie"
     },
     {
       title: "PEA",
       description: "Plan d'Épargne en Actions pour investir en bourse avec une fiscalité avantageuse.",
-      icon: <TrendingUp className="h-10 w-10 text-french-gold" />
+      icon: <TrendingUp className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/pea"
     },
     {
       title: "Comptes titres",
       description: "Investissez librement sur les marchés financiers français et internationaux.",
-      icon: <TrendingUp className="h-10 w-10 text-french-gold" />
+      icon: <TrendingUp className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/comptes-titres"
     }
   ],
   responsable: [
     {
       title: "Fonds ISR",
       description: "Investissement Socialement Responsable pour donner du sens à votre épargne.",
-      icon: <Leaf className="h-10 w-10 text-french-gold" />
+      icon: <Leaf className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/fonds-isr"
     },
     {
       title: "Énergies renouvelables",
       description: "Participez à la transition énergétique tout en diversifiant votre patrimoine.",
-      icon: <Leaf className="h-10 w-10 text-french-gold" />
+      icon: <Leaf className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/energies-renouvelables"
     }
   ],
   opportunites: [
     {
       title: "Création d'entreprise",
       description: "Accompagnement pour vos projets entrepreneuriaux et optimisation fiscale.",
-      icon: <Briefcase className="h-10 w-10 text-french-gold" />
+      icon: <Briefcase className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/creation-entreprise"
     },
     {
       title: "Rachat d'entreprise",
       description: "Stratégies pour l'acquisition et le développement d'entreprises existantes.",
-      icon: <Briefcase className="h-10 w-10 text-french-gold" />
+      icon: <Briefcase className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/rachat-entreprise"
     }
   ],
   diversification: [
     {
       title: "Or et métaux précieux",
       description: "Sécurisez votre patrimoine avec des actifs tangibles résistants à l'inflation.",
-      icon: <Layers className="h-10 w-10 text-french-gold" />
+      icon: <Layers className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/or-metaux-precieux"
     },
     {
       title: "Forêts et terres agricoles",
       description: "Investissement dans le foncier pour une diversification patrimoniale durable.",
-      icon: <Layers className="h-10 w-10 text-french-gold" />
+      icon: <Layers className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/forets-terres-agricoles"
     },
     {
       title: "Art et collection",
       description: "Conseil en investissement dans des actifs de passion avec potentiel de valorisation.",
-      icon: <Layers className="h-10 w-10 text-french-gold" />
+      icon: <Layers className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/art-collection"
     }
   ]
 };
@@ -126,9 +139,11 @@ const Solutions = () => {
                       <p className="text-french-gray">{solution.description}</p>
                     </CardContent>
                     <CardFooter>
-                      <Button className="bg-french-navy hover:bg-french-navy/90 w-full">
-                        En savoir plus
-                      </Button>
+                      <Link to={solution.link} className="w-full">
+                        <Button className="bg-french-navy hover:bg-french-navy/90 w-full">
+                          En savoir plus
+                        </Button>
+                      </Link>
                     </CardFooter>
                   </Card>
                 ))}
