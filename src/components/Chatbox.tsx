@@ -3,18 +3,22 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, Send, X, MinusCircle } from "lucide-react";
+import { MessageCircle, Send, X, MinusCircle, ThumbsUp, ThumbsDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
+import { toast } from "@/components/ui/use-toast";
 
 interface Message {
   id: number;
   text: string;
   isUser: boolean;
   timestamp: Date;
+  showFeedback?: boolean;
 }
 
 const Chatbox = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [message, setMessage] = useState("");
@@ -69,6 +73,7 @@ const Chatbox = () => {
         text: data.response,
         isUser: false,
         timestamp: new Date(),
+        showFeedback: true,
       };
 
       setMessages(prev => [...prev, botResponse]);
@@ -79,6 +84,7 @@ const Chatbox = () => {
         text: "Désolé, je n'ai pas pu générer de réponse pour le moment.",
         isUser: false,
         timestamp: new Date(),
+        showFeedback: true,
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -88,6 +94,36 @@ const Chatbox = () => {
   
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  };
+
+  const handleFeedback = (isPositive: boolean, messageId: number) => {
+    // Update message to hide feedback buttons
+    setMessages(prev => 
+      prev.map(msg => 
+        msg.id === messageId 
+          ? {...msg, showFeedback: false} 
+          : msg
+      )
+    );
+
+    if (!isPositive) {
+      toast({
+        title: "Besoin d'aide supplémentaire ?",
+        description: "Nous vous redirigeons vers notre page de contact pour une assistance personnalisée.",
+        duration: 3000,
+      });
+      
+      setTimeout(() => {
+        setIsOpen(false);
+        navigate("/contact");
+      }, 1500);
+    } else {
+      toast({
+        title: "Merci pour votre retour !",
+        description: "Nous sommes ravis d'avoir pu vous aider.",
+        duration: 3000,
+      });
+    }
   };
 
   return (
@@ -126,22 +162,45 @@ const Chatbox = () => {
             <>
               <div className="h-64 overflow-y-auto p-3 bg-gray-50">
                 {messages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className={cn(
-                      "mb-3 max-w-[80%] rounded-lg p-2 text-sm",
-                      msg.isUser
-                        ? "ml-auto bg-french-navy text-white"
-                        : "mr-auto bg-french-cream text-french-navy"
-                    )}
-                  >
-                    <div>{msg.text}</div>
-                    <div className={cn(
-                      "text-right text-xs mt-1",
-                      msg.isUser ? "text-french-cream" : "text-french-gray"
-                    )}>
-                      {formatTime(msg.timestamp)}
+                  <div key={msg.id}>
+                    <div
+                      className={cn(
+                        "mb-1 max-w-[80%] rounded-lg p-2 text-sm",
+                        msg.isUser
+                          ? "ml-auto bg-french-navy text-white"
+                          : "mr-auto bg-french-cream text-french-navy"
+                      )}
+                    >
+                      <div>{msg.text}</div>
+                      <div className={cn(
+                        "text-right text-xs mt-1",
+                        msg.isUser ? "text-french-cream" : "text-french-gray"
+                      )}>
+                        {formatTime(msg.timestamp)}
+                      </div>
                     </div>
+                    
+                    {msg.showFeedback && !msg.isUser && (
+                      <div className="flex justify-end gap-2 mb-3 mr-auto">
+                        <span className="text-xs text-french-gray italic">Cette réponse vous a-t-elle aidé ?</span>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="h-6 w-6 p-0 text-green-600 hover:bg-transparent hover:text-green-700"
+                          onClick={() => handleFeedback(true, msg.id)}
+                        >
+                          <ThumbsUp size={14} />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="h-6 w-6 p-0 text-red-600 hover:bg-transparent hover:text-red-700"
+                          onClick={() => handleFeedback(false, msg.id)}
+                        >
+                          <ThumbsDown size={14} />
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 ))}
                 {isLoading && (
