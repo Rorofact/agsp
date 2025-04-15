@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShieldCheck, TrendingUp, Scale, BarChart4, Medal, Mail, PhoneCall, Calendar } from "lucide-react";
+import { ShieldCheck, TrendingUp, Scale, BarChart4, Medal, Mail, PhoneCall, Calendar, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -105,7 +105,7 @@ const Home = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-french-navy mb-4">Qui Suis-je</h2>
             <p className="text-french-gray max-w-2xl mx-auto">
-              Découvrez mon parcours et mon approche en tant que conseiller en gestion de patrimoine
+              Découvrez mon parcours et mon approche en tant que conseillère en gestion de patrimoine
             </p>
           </div>
           
@@ -118,13 +118,17 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 bg-white">
-                  <h3 className="text-2xl font-bold text-french-navy mb-2">Antoine Girard</h3>
-                  <p className="text-french-gray font-medium">Conseiller en Gestion de Patrimoine</p>
+                  <h3 className="text-2xl font-bold text-french-navy mb-2">Alice Goyec</h3>
+                  <p className="text-french-gray font-medium">Conseillère en Gestion de Patrimoine</p>
                   
                   <div className="mt-6 space-y-3">
                     <div className="flex items-center">
                       <Medal className="h-5 w-5 text-french-gold mr-3" />
-                      <span>15+ ans d'expérience</span>
+                      <span>12+ ans d'expérience</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Building className="h-5 w-5 text-french-gold mr-3" />
+                      <span>Responsable d'agence</span>
                     </div>
                     <div className="flex items-center">
                       <PhoneCall className="h-5 w-5 text-french-gold mr-3" />
@@ -141,7 +145,7 @@ const Home = () => {
                   </div>
                   
                   <Button className="w-full mt-6 bg-french-navy text-white">
-                    Me contacter
+                    <Link to="/contact">Me contacter</Link>
                   </Button>
                 </div>
               </div>
@@ -152,15 +156,15 @@ const Home = () => {
               
               <div className="space-y-6 mb-8">
                 <p className="text-lg">
-                  Diplômé en gestion de patrimoine et finances, j'accompagne depuis plus de 15 ans des particuliers et des entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
+                  Diplômée en commerce et finance avec une spécialisation en gestion de patrimoine, j'accompagne depuis plus de 12 ans des particuliers et des entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
                 </p>
                 
                 <p className="text-lg">
-                  Ma philosophie repose sur une approche globale et personnalisée. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
+                  Forte d'une expérience significative auprès de grands groupes bancaires comme LCL et BNP Paribas, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. En tant que responsable d'agence, je m'engage à vous offrir un service d'excellence.
                 </p>
                 
                 <p className="text-lg">
-                  L'indépendance est au cœur de ma pratique, ce qui me permet de vous recommander les meilleures solutions du marché sans conflit d'intérêt. Mon objectif est de construire une relation de confiance durable pour vous accompagner à chaque étape de votre vie.
+                  Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
                 </p>
               </div>
 
@@ -169,19 +173,20 @@ const Home = () => {
                   <h4 className="text-xl font-bold text-french-navy mb-3">Ma formation</h4>
                   <ul className="list-disc list-inside space-y-2 text-french-gray">
                     <li>Master en Gestion de Patrimoine</li>
+                    <li>Diplôme de l'ESG Finance</li>
                     <li>Certification AMF</li>
-                    <li>Diplôme Expert en Stratégie Fiscale</li>
                     <li>Formation continue en droit patrimonial</li>
                   </ul>
                 </Card>
                 
                 <Card className="p-6 border-l-4 border-french-gold">
-                  <h4 className="text-xl font-bold text-french-navy mb-3">Mes valeurs</h4>
+                  <h4 className="text-xl font-bold text-french-navy mb-3">Mes domaines d'expertise</h4>
                   <ul className="list-disc list-inside space-y-2 text-french-gray">
-                    <li>Transparence et honnêteté</li>
-                    <li>Écoute et disponibilité</li>
-                    <li>Excellence et rigueur</li>
-                    <li>Confidentialité absolue</li>
+                    <li>Conseil en investissement</li>
+                    <li>Optimisation fiscale</li>
+                    <li>Stratégies de retraite</li>
+                    <li>Transmission de patrimoine</li>
+                    <li>Protection familiale</li>
                   </ul>
                 </Card>
               </div>
@@ -192,21 +197,21 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="p-6 shadow-md bg-white">
                 <p className="italic text-french-gray mb-4">
-                  "Grâce aux conseils d'Antoine, j'ai pu optimiser ma fiscalité et préparer sereinement ma retraite. Un accompagnement professionnel et personnalisé que je recommande vivement."
+                  "Grâce aux conseils d'Alice, j'ai pu optimiser ma fiscalité et préparer sereinement ma retraite. Un accompagnement professionnel et personnalisé que je recommande vivement."
                 </p>
                 <p className="font-semibold">Sophie M., cadre dirigeante</p>
               </Card>
               
               <Card className="p-6 shadow-md bg-white">
                 <p className="italic text-french-gray mb-4">
-                  "Un conseiller à l'écoute qui a su comprendre mes objectifs patrimoniaux et me proposer des solutions sur mesure. Une vraie relation de confiance s'est établie."
+                  "Une conseillère à l'écoute qui a su comprendre mes objectifs patrimoniaux et me proposer des solutions sur mesure. Une vraie relation de confiance s'est établie."
                 </p>
                 <p className="font-semibold">Michel D., entrepreneur</p>
               </Card>
               
               <Card className="p-6 shadow-md bg-white">
                 <p className="italic text-french-gray mb-4">
-                  "Je cherchais un expert pour m'accompagner dans la transmission de mon entreprise. Antoine m'a guidé avec professionnalisme et efficacité tout au long du processus."
+                  "Je cherchais une experte pour m'accompagner dans la transmission de mon entreprise. Alice m'a guidé avec professionnalisme et efficacité tout au long du processus."
                 </p>
                 <p className="font-semibold">Philippe L., chef d'entreprise</p>
               </Card>

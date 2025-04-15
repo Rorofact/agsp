@@ -10,7 +10,7 @@ export const useChatService = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?",
+      text: "Bonjour ! Je suis l'assistant virtuel d'Alice Goyec. Comment puis-je vous aider aujourd'hui ?",
       isUser: false,
       timestamp: new Date(),
     },
