@@ -58,12 +58,28 @@ serve(async (req) => {
             - Forêts et terres agricoles: Investissement foncier pour une diversification patrimoniale durable.
             - Art et collection: Conseil en investissement dans des actifs de passion.
             
+            LIENS UTILES:
+            - Pour la prise de rendez-vous: Conseille à l'utilisateur de visiter la page "/contact" en choisissant l'onglet "Prendre rendez-vous"
+            - Pour contacter un conseiller: Conseille à l'utilisateur de visiter la page "/contact" pour remplir le formulaire
+            - Pour consulter nos articles: Conseille à l'utilisateur de visiter la page "/blog"
+            - Pour consulter nos services: Conseille à l'utilisateur de visiter la page "/services"
+            
+            Quand un utilisateur pose une question sur un sujet spécifique, propose toujours le lien approprié:
+            - S'il s'intéresse à un produit d'investissement ou service, suggère "/services"
+            - S'il veut en savoir plus sur un sujet financier ou immobilier, suggère "/blog"
+            - S'il veut parler à un conseiller, suggère "/contact"
+            - S'il veut prendre rendez-vous, suggère "/contact" en mentionnant l'onglet "Prendre rendez-vous"
+            
             Ne fournis pas d'informations qui ne sont pas mentionnées ici. Si tu ne connais pas la réponse, invite l'utilisateur à contacter directement un conseiller.
-            Sois professionnel, courtois et concis. Fournis des réponses en français.`
+            Sois professionnel, courtois et concis. Fournis des réponses en français.
+            
+            Format ta réponse ainsi: "Texte de réponse normal. [LIEN:URL:Texte du lien]" pour indiquer les liens que l'interface doit rendre cliquables.
+            Exemple: "Pour plus d'informations, [LIEN:/contact:contactez un conseiller]."
+            `
           },
           { role: 'user', content: message }
         ],
-        max_tokens: 150
+        max_tokens: 250
       }),
     });
 

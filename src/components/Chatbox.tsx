@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/use-toast";
+import { Link } from "react-router-dom";
 
 interface Message {
   id: number;
@@ -31,6 +32,7 @@ const Chatbox = () => {
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const toggleChat = () => {
     if (isMinimized) {
@@ -42,6 +44,53 @@ const Chatbox = () => {
 
   const minimizeChat = () => {
     setIsMinimized(true);
+  };
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const parseMessageWithLinks = (text: string) => {
+    // Regex pour trouver les liens au format [LIEN:/chemin:texte du lien]
+    const regex = /\[LIEN:(\/[^:]*):([^\]]*)\]/g;
+    
+    // Diviser le texte en segments (texte normal et liens)
+    const segments = [];
+    let lastIndex = 0;
+    let match;
+    
+    while ((match = regex.exec(text)) !== null) {
+      // Ajouter le texte avant le lien
+      if (match.index > lastIndex) {
+        segments.push({
+          type: 'text',
+          content: text.substring(lastIndex, match.index)
+        });
+      }
+      
+      // Ajouter le lien
+      segments.push({
+        type: 'link',
+        url: match[1],
+        content: match[2]
+      });
+      
+      lastIndex = match.index + match[0].length;
+    }
+    
+    // Ajouter le reste du texte après le dernier lien
+    if (lastIndex < text.length) {
+      segments.push({
+        type: 'text',
+        content: text.substring(lastIndex)
+      });
+    }
+    
+    return segments;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -171,7 +220,26 @@ const Chatbox = () => {
                           : "mr-auto bg-french-cream text-french-navy"
                       )}
                     >
-                      <div>{msg.text}</div>
+                      {msg.isUser ? (
+                        <div>{msg.text}</div>
+                      ) : (
+                        <div>
+                          {parseMessageWithLinks(msg.text).map((segment, index) => 
+                            segment.type === 'text' ? (
+                              <span key={index}>{segment.content}</span>
+                            ) : (
+                              <Link 
+                                key={index} 
+                                to={segment.url} 
+                                className="text-french-navy font-medium underline hover:text-french-gold"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {segment.content}
+                              </Link>
+                            )
+                          )}
+                        </div>
+                      )}
                       <div className={cn(
                         "text-right text-xs mt-1",
                         msg.isUser ? "text-french-cream" : "text-french-gray"
@@ -203,6 +271,7 @@ const Chatbox = () => {
                     )}
                   </div>
                 ))}
+                <div ref={messagesEndRef} />
                 {isLoading && (
                   <div className="text-center text-french-gray text-sm italic">
                     En train de générer une réponse...
