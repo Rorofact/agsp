@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,14 +18,13 @@ const Footer = () => {
               Accompagnement personnalisé pour la gestion et l'optimisation de votre patrimoine.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-french-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-french-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-french-gold transition-colors">
-                <Twitter size={20} />
+              <a 
+                href="https://www.linkedin.com/in/alice-goyec-b004109a/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-300 hover:text-french-gold transition-colors"
+              >
+                <Linkedin size={20} />
               </a>
             </div>
           </div>
