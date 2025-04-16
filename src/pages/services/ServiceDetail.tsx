@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Calendar } from 'lucide-react';
+import { ArrowLeft, Phone, Calendar } from 'lucide-react';
 import NotFound from '../NotFound';
 
 interface ServiceDetailProps {
@@ -369,8 +369,14 @@ const ServiceDetail = () => {
                 Prix pour une consultation initiale. Des services personnalisés peuvent être proposés selon vos besoins spécifiques.
               </p>
               <div className="space-y-4">
+                <Link to="/contact">
+                  <Button className="w-full bg-french-navy hover:bg-french-navy/90 flex items-center justify-center mb-2">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Nous contacter
+                  </Button>
+                </Link>
                 <Link to="/rendez-vous">
-                  <Button className="w-full bg-french-navy hover:bg-french-navy/90 flex items-center justify-center">
+                  <Button className="w-full bg-french-gold hover:bg-french-gold/90 flex items-center justify-center">
                     <Calendar className="mr-2 h-4 w-4" />
                     Prendre rendez-vous
                   </Button>
