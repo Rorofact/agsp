@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { toast } from "@/components/ui/use-toast";
-import { ArrowRight, ArrowLeft, Calculator, Repeat } from "lucide-react";
+import { ArrowRight, Calculator, Repeat } from "lucide-react";
 
 const AssuranceEmprunteur = () => {
   const [pret, setPret] = useState({
@@ -26,6 +25,21 @@ const AssuranceEmprunteur = () => {
     tauxAssuranceNouveau: 0.30
   });
 
+  // États pour stocker les résultats des simulations
+  const [resultatPret, setResultatPret] = useState<{
+    mensualite: number;
+    coutCredit: number;
+    coutAssurance: number;
+    tauxEffectifGlobal: number;
+  } | null>(null);
+
+  const [resultatRachat, setResultatRachat] = useState<{
+    economiesMensuelles: number;
+    economiesTotales: number;
+    economieAssurance: number;
+    economieGlobale: number;
+  } | null>(null);
+
   const calculerMensualite = (montant: number, taux: number, duree: number) => {
     const tauxMensuel = taux / 100 / 12;
     const nbMensualites = duree * 12;
@@ -42,17 +56,11 @@ const AssuranceEmprunteur = () => {
     const coutTotal = mensualite * pret.duree * 12;
     const coutAssurance = calculerCoutAssurance(pret.montant, pret.tauxAssurance, pret.duree);
     
-    toast({
-      title: "Résultat de votre simulation de prêt",
-      description: (
-        <div className="space-y-2">
-          <p>Mensualité: <strong>{mensualite.toFixed(2)}€</strong></p>
-          <p>Coût total du crédit: <strong>{(coutTotal - pret.montant).toFixed(2)}€</strong></p>
-          <p>Coût total de l'assurance: <strong>{coutAssurance.toFixed(2)}€</strong></p>
-          <p>Taux effectif global: <strong>{(pret.taux + pret.tauxAssurance / 100).toFixed(2)}%</strong></p>
-        </div>
-      ),
-      duration: 10000,
+    setResultatPret({
+      mensualite: mensualite,
+      coutCredit: coutTotal - pret.montant,
+      coutAssurance: coutAssurance,
+      tauxEffectifGlobal: pret.taux + pret.tauxAssurance / 100
     });
   };
 
@@ -66,17 +74,11 @@ const AssuranceEmprunteur = () => {
     const economiesMensuelles = mensualiteActuelle - mensualiteNouvelle;
     const economieAssurance = coutAssuranceActuel - coutAssuranceNouveau;
     
-    toast({
-      title: "Économies potentielles avec rachat de prêt",
-      description: (
-        <div className="space-y-2">
-          <p>Économie mensuelle: <strong>{economiesMensuelles.toFixed(2)}€</strong></p>
-          <p>Économie totale sur la durée restante: <strong>{(economiesMensuelles * rachat.dureeRestante * 12).toFixed(2)}€</strong></p>
-          <p>Économie sur l'assurance: <strong>{economieAssurance.toFixed(2)}€</strong></p>
-          <p>Économie globale: <strong>{(economiesMensuelles * rachat.dureeRestante * 12 + economieAssurance).toFixed(2)}€</strong></p>
-        </div>
-      ),
-      duration: 10000,
+    setResultatRachat({
+      economiesMensuelles: economiesMensuelles,
+      economiesTotales: economiesMensuelles * rachat.dureeRestante * 12,
+      economieAssurance: economieAssurance,
+      economieGlobale: economiesMensuelles * rachat.dureeRestante * 12 + economieAssurance
     });
   };
 
@@ -185,6 +187,30 @@ const AssuranceEmprunteur = () => {
                 >
                   Simuler mon prêt <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
+                
+                {resultatPret && (
+                  <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 className="text-lg font-semibold text-french-navy mb-3">Résultat de votre simulation</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span>Mensualité:</span>
+                        <span className="font-semibold">{resultatPret.mensualite.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Coût total du crédit:</span>
+                        <span className="font-semibold">{resultatPret.coutCredit.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Coût total de l'assurance:</span>
+                        <span className="font-semibold">{resultatPret.coutAssurance.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Taux effectif global:</span>
+                        <span className="font-semibold">{resultatPret.tauxEffectifGlobal.toFixed(2)} %</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
@@ -264,6 +290,30 @@ const AssuranceEmprunteur = () => {
                 >
                   Calculer mes économies <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
+
+                {resultatRachat && (
+                  <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 className="text-lg font-semibold text-french-navy mb-3">Économies potentielles</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span>Économie mensuelle:</span>
+                        <span className="font-semibold">{resultatRachat.economiesMensuelles.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Économie totale sur la durée restante:</span>
+                        <span className="font-semibold">{resultatRachat.economiesTotales.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Économie sur l'assurance:</span>
+                        <span className="font-semibold">{resultatRachat.economieAssurance.toFixed(2)} €</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Économie globale:</span>
+                        <span className="font-semibold">{resultatRachat.economieGlobale.toFixed(2)} €</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
