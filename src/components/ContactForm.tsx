@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -32,18 +31,8 @@ const ContactForm = () => {
         throw new Error('Veuillez remplir tous les champs obligatoires.');
       }
 
-      // Envoi du message à Supabase
-      const { error } = await supabase
-        .from('messages_contact')
-        .insert({
-          nom: formData.nom,
-          prenom: formData.prenom,
-          email: formData.email,
-          telephone: formData.telephone,
-          message: formData.message
-        });
-
-      if (error) throw error;
+      // Simulation de l'envoi du message
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       toast({
         title: "Message envoyé!",

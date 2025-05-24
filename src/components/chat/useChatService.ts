@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { Message } from "./types";
 import { toast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
@@ -30,15 +29,12 @@ export const useChatService = () => {
     setIsLoading(true);
     
     try {
-      const { data, error } = await supabase.functions.invoke('generate-chat-response', {
-        body: JSON.stringify({ message: messageText })
-      });
-
-      if (error) throw error;
+      // Simulation d'une réponse du chatbot
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       const botResponse: Message = {
         id: messages.length + 2,
-        text: data.response,
+        text: "Merci pour votre message. Pour une assistance personnalisée, je vous invite à prendre rendez-vous ou à nous contacter directement.",
         isUser: false,
         timestamp: new Date(),
         showFeedback: true,

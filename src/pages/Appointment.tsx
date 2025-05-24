@@ -1,6 +1,5 @@
 
-import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
@@ -10,19 +9,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { FileText, Clock, Calendar as CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
-import { fr } from 'date-fns/locale';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-
-interface Disponibilite {
-  id: string;
-  date: string;
-  heure: string;
-  disponible: boolean;
-}
 
 const appointmentTypes = [
   {
@@ -62,6 +52,11 @@ const appointmentTypes = [
   },
 ];
 
+const timeSlots = [
+  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+  "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00"
+];
+
 const formSchema = z.object({
   prenom: z.string().min(2, "Le prénom est requis"),
   nom: z.string().min(2, "Le nom est requis"),
@@ -69,14 +64,12 @@ const formSchema = z.object({
   telephone: z.string().min(10, "Numéro de téléphone invalide"),
   message: z.string().optional(),
   type_rdv: z.string().min(1, "Veuillez sélectionner un type de rendez-vous"),
-  disponibilite_id: z.string().min(1, "Veuillez sélectionner une date et heure de rendez-vous")
+  date: z.date({ required_error: "Veuillez sélectionner une date" }),
+  heure: z.string().min(1, "Veuillez sélectionner une heure")
 });
 
 const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-  const [disponibilites, setDisponibilites] = useState<Disponibilite[]>([]);
-  const [datesAvecDisponibilites, setDatesAvecDisponibilites] = useState<Date[]>([]);
-  const [heuresDisponibles, setHeuresDisponibles] = useState<Disponibilite[]>([]);
   const [loading, setLoading] = useState(false);
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -88,81 +81,18 @@ const Appointment = () => {
       telephone: "",
       message: "",
       type_rdv: "",
-      disponibilite_id: ""
+      heure: ""
     },
   });
-
-  useEffect(() => {
-    const fetchDisponibilites = async () => {
-      setLoading(true);
-      try {
-        const { data, error } = await supabase
-          .from('disponibilites')
-          .select('*')
-          .eq('disponible', true)
-          .order('date', { ascending: true })
-          .order('heure', { ascending: true });
-        
-        if (error) throw error;
-        
-        const dispos = data as Disponibilite[];
-        setDisponibilites(dispos);
-        
-        // Extraire les dates uniques qui ont des disponibilités
-        const datesUniques = Array.from(new Set(dispos.map(d => d.date)))
-          .map(dateStr => new Date(dateStr));
-        
-        setDatesAvecDisponibilites(datesUniques);
-      } catch (error) {
-        console.error("Erreur lors du chargement des disponibilités:", error);
-        toast({
-          title: "Erreur",
-          description: "Impossible de charger les disponibilités. Veuillez réessayer ultérieurement.",
-          variant: "destructive",
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    fetchDisponibilites();
-  }, []);
-
-  useEffect(() => {
-    if (selectedDate) {
-      const dateStr = selectedDate.toISOString().split('T')[0];
-      const heuresDispos = disponibilites.filter(d => d.date === dateStr);
-      setHeuresDisponibles(heuresDispos);
-    } else {
-      setHeuresDisponibles([]);
-    }
-  }, [selectedDate, disponibilites]);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setLoading(true);
     try {
-      const { error } = await supabase
-        .from('rendez_vous')
-        .insert({
-          prenom: values.prenom,
-          nom: values.nom,
-          email: values.email,
-          telephone: values.telephone,
-          message: values.message,
-          type_rdv: values.type_rdv,
-          disponibilite_id: values.disponibilite_id,
-        });
-      
-      if (error) throw error;
-      
-      // Mettre à jour la disponibilité comme non disponible
-      await supabase
-        .from('disponibilites')
-        .update({ disponible: false })
-        .eq('id', values.disponibilite_id);
+      // Simulation de l'envoi de la demande
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast({
-        title: "Rendez-vous confirmé",
+        title: "Rendez-vous demandé",
         description: "Nous vous contacterons pour confirmer votre rendez-vous.",
         duration: 5000,
       });
@@ -170,22 +100,12 @@ const Appointment = () => {
       // Réinitialiser le formulaire
       form.reset();
       setSelectedDate(undefined);
-      setHeuresDisponibles([]);
-      
-      // Mettre à jour la liste des disponibilités
-      const updatedDisponibilites = disponibilites.filter(d => d.id !== values.disponibilite_id);
-      setDisponibilites(updatedDisponibilites);
-      
-      // Mettre à jour les dates avec disponibilités
-      const datesUniques = Array.from(new Set(updatedDisponibilites.map(d => d.date)))
-        .map(dateStr => new Date(dateStr));
-      setDatesAvecDisponibilites(datesUniques);
       
     } catch (error: any) {
       console.error("Erreur lors de la prise de rendez-vous:", error);
       toast({
         title: "Erreur",
-        description: error.message || "Une erreur s'est produite lors de la prise de rendez-vous.",
+        description: "Une erreur s'est produite lors de la prise de rendez-vous.",
         variant: "destructive",
       });
     } finally {
@@ -266,19 +186,16 @@ const Appointment = () => {
                     <Calendar
                       mode="single"
                       selected={selectedDate}
-                      onSelect={setSelectedDate}
+                      onSelect={(date) => {
+                        setSelectedDate(date);
+                        if (date) {
+                          form.setValue("date", date);
+                        }
+                      }}
                       disabled={[
                         { before: new Date() },
-                        (date) => {
-                          // Désactiver les dates qui n'ont pas de disponibilités
-                          return !datesAvecDisponibilites.some(d => 
-                            d.getFullYear() === date.getFullYear() &&
-                            d.getMonth() === date.getMonth() &&
-                            d.getDate() === date.getDate()
-                          );
-                        }
+                        { dayOfWeek: [0, 6] } // Disable weekends
                       ]}
-                      locale={fr}
                     />
                   </div>
                 </div>
@@ -288,32 +205,28 @@ const Appointment = () => {
                   
                   <FormField
                     control={form.control}
-                    name="disponibilite_id"
+                    name="heure"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
                             value={field.value}
-                            className="space-y-2"
+                            className="grid grid-cols-2 gap-2"
                           >
                             {selectedDate ? (
-                              heuresDisponibles.length > 0 ? (
-                                heuresDisponibles.map((dispo) => (
-                                  <FormItem key={dispo.id} className="flex items-center space-x-3 space-y-0">
-                                    <FormControl>
-                                      <RadioGroupItem value={dispo.id} />
-                                    </FormControl>
-                                    <FormLabel className="font-normal cursor-pointer">
-                                      {dispo.heure.substring(0, 5)}
-                                    </FormLabel>
-                                  </FormItem>
-                                ))
-                              ) : (
-                                <p className="text-french-gray">Aucun créneau disponible à cette date.</p>
-                              )
+                              timeSlots.map((time) => (
+                                <FormItem key={time} className="flex items-center space-x-3 space-y-0">
+                                  <FormControl>
+                                    <RadioGroupItem value={time} />
+                                  </FormControl>
+                                  <FormLabel className="font-normal cursor-pointer">
+                                    {time}
+                                  </FormLabel>
+                                </FormItem>
+                              ))
                             ) : (
-                              <p className="text-french-gray">Veuillez d'abord sélectionner une date.</p>
+                              <p className="text-french-gray col-span-2">Veuillez d'abord sélectionner une date.</p>
                             )}
                           </RadioGroup>
                         </FormControl>
