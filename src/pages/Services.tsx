@@ -10,7 +10,6 @@ interface Service {
   id: number;
   name: string;
   category: string;
-  price: number;
   image: string;
   description: string;
 }
@@ -24,7 +23,6 @@ const Services = () => {
       id: 1,
       name: "Consultation Patrimoniale",
       category: "conseil",
-      price: 150,
       image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Analyse complète de votre situation financière et conseils personnalisés pour optimiser votre patrimoine."
     },
@@ -32,23 +30,20 @@ const Services = () => {
       id: 2,
       name: "Stratégie d'Investissement",
       category: "investissement",
-      price: 200,
       image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Élaboration d'une stratégie d'investissement adaptée à vos objectifs et votre profil de risque."
     },
     {
       id: 3,
-      name: "Gestion de Portefeuille",
-      category: "gestion",
-      price: 250,
+      name: "Construction de portefeuille",
+      category: "investissement",
       image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Suivi et optimisation régulière de vos placements financiers pour maximiser votre rendement."
+      description: "Notre service de gestion de portefeuille vous propose de vous accompagner dans la sélection des actions de votre PEA ou CTO. Notre expertise sur les investissements pertinents à long terme est basée sur des stratégies éprouvées par les plus grands investisseurs tels que Graham, Buffet ou Lynch."
     },
     {
       id: 4,
       name: "Planification Retraite",
       category: "conseil",
-      price: 180,
       image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Préparation de votre avenir financier pour assurer une retraite sereine et confortable."
     },
@@ -56,15 +51,13 @@ const Services = () => {
       id: 5,
       name: "Investissement Immobilier",
       category: "immobilier",
-      price: 220,
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Accompagnement dans l'acquisition de biens immobiliers à fort potentiel de rentabilité."
+      description: "Accompagnement dans l'acquisition de biens immobiliers de rentabilité."
     },
     {
       id: 6,
       name: "Optimisation Fiscale",
       category: "fiscalité",
-      price: 190,
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Stratégies légales pour réduire votre charge fiscale et maximiser votre patrimoine."
     },
@@ -72,15 +65,13 @@ const Services = () => {
       id: 7,
       name: "Défiscalisation Immobilière",
       category: "immobilier",
-      price: 210,
       image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      description: "Dispositifs Pinel, Denormandie, Malraux pour investir tout en réduisant vos impôts."
+      description: "Dispositifs Denormandie, Malraux pour investir tout en réduisant vos impôts."
     },
     {
       id: 8,
       name: "Transmission de Patrimoine",
       category: "succession",
-      price: 230,
       image: "https://images.unsplash.com/photo-1586527317521-54e53e996909?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Préparation et optimisation de la transmission de votre patrimoine à vos héritiers."
     },
@@ -144,7 +135,6 @@ const Services = () => {
                         <h3 className="font-semibold text-lg mb-1">{service.name}</h3>
                         <p className="text-sm text-french-gray mb-2 capitalize">{service.category}</p>
                         <p className="text-sm text-french-gray mb-4 line-clamp-2">{service.description}</p>
-                        <p className="font-medium text-french-navy">{service.price} €</p>
                       </CardContent>
                       <CardFooter>
                         <Link to={`/services/${service.id}`}>

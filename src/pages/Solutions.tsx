@@ -2,7 +2,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Building2, TrendingUp, Leaf, Briefcase, Layers, ShieldCheck } from "lucide-react";
+import { Building2, TrendingUp, Leaf, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const solutionsData = {
@@ -20,10 +20,10 @@ const solutionsData = {
       link: "/solutions/scpi"
     },
     {
-      title: "Loi Pinel",
-      description: "Réduisez votre imposition tout en investissant dans l'immobilier neuf grâce au dispositif Pinel.",
+      title: "Immobilier défiscalisant",
+      description: "Réduisez votre imposition tout en investissant dans l'immobilier grâce aux dispositifs DeNormandie, Malraux et Monument historique.",
       icon: <Building2 className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/loi-pinel"
+      link: "/solutions/immobilier-defiscalisant"
     }
   ],
   placements: [
@@ -60,27 +60,7 @@ const solutionsData = {
       link: "/solutions/energies-renouvelables"
     }
   ],
-  opportunites: [
-    {
-      title: "Création d'entreprise",
-      description: "Accompagnement pour vos projets entrepreneuriaux et optimisation fiscale.",
-      icon: <Briefcase className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/creation-entreprise"
-    },
-    {
-      title: "Rachat d'entreprise",
-      description: "Stratégies pour l'acquisition et le développement d'entreprises existantes.",
-      icon: <Briefcase className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/rachat-entreprise"
-    }
-  ],
   diversification: [
-    {
-      title: "Or et métaux précieux",
-      description: "Sécurisez votre patrimoine avec des actifs tangibles résistants à l'inflation.",
-      icon: <Layers className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/or-metaux-precieux"
-    },
     {
       title: "Forêts et terres agricoles",
       description: "Investissement dans le foncier pour une diversification patrimoniale durable.",
@@ -92,6 +72,18 @@ const solutionsData = {
       description: "Conseil en investissement dans des actifs de passion avec potentiel de valorisation.",
       icon: <Layers className="h-10 w-10 text-french-gold" />,
       link: "/solutions/art-collection"
+    },
+    {
+      title: "Vin",
+      description: "Investissement dans les grands crus pour une diversification patrimoniale originale et passionnante.",
+      icon: <Layers className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/vin"
+    },
+    {
+      title: "Private Equity",
+      description: "Investissement dans des entreprises non cotées pour un potentiel de rendement élevé.",
+      icon: <Layers className="h-10 w-10 text-french-gold" />,
+      link: "/solutions/private-equity"
     }
   ]
 };
@@ -115,9 +107,6 @@ const Solutions = () => {
             </TabsTrigger>
             <TabsTrigger value="responsable" className="data-[state=active]:bg-french-navy data-[state=active]:text-white">
               Investissements Responsables
-            </TabsTrigger>
-            <TabsTrigger value="opportunites" className="data-[state=active]:bg-french-navy data-[state=active]:text-white">
-              Opportunités Professionnelles
             </TabsTrigger>
             <TabsTrigger value="diversification" className="data-[state=active]:bg-french-navy data-[state=active]:text-white">
               Placements Diversification

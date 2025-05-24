@@ -59,19 +59,14 @@ const Carriere = () => {
   return (
     <div className="py-12 px-4">
       <div className="container mx-auto">
-        <h1 className="page-title text-center mb-4">Rejoignez notre équipe</h1>
+        <h1 className="page-title text-center mb-4">Aidez les français à investir judicieusement leur épargne en devenant CGP</h1>
         <p className="subtitle text-center mx-auto max-w-3xl mb-12">
-          Nous recherchons des talents passionnés par la gestion de patrimoine pour accompagner nos clients dans la réalisation de leurs objectifs financiers.
+          J'aide les talents passionnés par l'investissement à lancer leur cabinet de gestion de patrimoine, pour en savoir plus n'hésitez pas à me contacter.
         </p>
 
         {loading ? (
           <div className="flex justify-center my-12">
             <div className="animate-pulse text-french-navy">Chargement des offres...</div>
-          </div>
-        ) : offres.length === 0 ? (
-          <div className="text-center my-12">
-            <h3 className="text-xl">Aucune offre disponible actuellement</h3>
-            <p className="text-french-gray mt-2">Revenez vérifier ultérieurement ou contactez-nous directement.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

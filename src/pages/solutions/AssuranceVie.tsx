@@ -21,7 +21,7 @@ const AssuranceVie = () => {
         "Diversification possible entre fonds sécuritaires et supports dynamiques",
         "Abattement fiscal annuel de 4 600€ (célibataire) ou 9 200€ (couple) sur les gains après 8 ans",
         "Transmission facilitée aux bénéficiaires désignés (hors cadre successoral)",
-        "Exonération totale ou partielle des droits de succession selon l'âge des versements"
+        "Exonération totale ou partielle des droits de succession"
       ]}
     />
   );

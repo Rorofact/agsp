@@ -32,11 +32,11 @@ const About = () => {
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center">
                     <Medal className="h-5 w-5 text-french-gold mr-3" />
-                    <span>12+ ans d'expérience</span>
+                    <span>10+ ans d'expérience</span>
                   </div>
                   <div className="flex items-center">
                     <Building className="h-5 w-5 text-french-gold mr-3" />
-                    <span>Responsable d'agence</span>
+                    <span>133 rue du Ranelagh<br />75016 Paris, France</span>
                   </div>
                   <div className="flex items-center">
                     <PhoneCall className="h-5 w-5 text-french-gold mr-3" />
@@ -44,7 +44,7 @@ const About = () => {
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-french-gold mr-3" />
-                    <span>contact@agstrategiepatrimoine.fr</span>
+                    <span>ag.strategiepatrimoine@gmail.com</span>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="h-5 w-5 text-french-gold mr-3" />
@@ -64,15 +64,19 @@ const About = () => {
             
             <div className="space-y-6 mb-10">
               <p className="text-lg">
-                Diplômée en commerce et finance avec une spécialisation en gestion de patrimoine, j'accompagne depuis plus de 12 ans des particuliers et des entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
+                Diplômée en commerce et finance avec une spécialisation en finance internationale, j'ai travaillé 10 ans en banque d'investissement. Tout d'abord en tant qu'analyste risque crédit au sein du groupe bancaire BPCE. Ma mission consistait en l'analyse des comptes de banques et d'entreprise afin de s'assurer de leur solidité financière. Puis, j'ai traversé l'Atlantique et rejoins Dexia Crédit Local à New York en financement de projet d'infrastructure comme des hôpitaux, des champs éoliens, des autoroutes entre autres, situés en Amérique du nord et du sud. Et enfin, j'ai exercé en tant qu'assistant trader sur les produits structurés chez Société Générale.
               </p>
               
               <p className="text-lg">
-                Forte d'une expérience significative auprès de grands groupes bancaires comme LCL et BNP Paribas, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Mon rôle de responsable d'agence m'a permis d'acquérir une vision globale des enjeux patrimoniaux pour mes clients.
+                J'ai ensuite voulu me reconnecter à l'économie réelle et pouvoir mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne.
               </p>
               
               <p className="text-lg">
-                Ma philosophie repose sur une approche personnalisée et sur mesure. Je m'engage à comprendre en profondeur vos objectifs, votre situation familiale et professionnelle pour construire une stratégie patrimoniale qui vous correspond véritablement. Ma priorité est de créer une relation de confiance durable, fondée sur la transparence et l'écoute active.
+                Aujourd'hui j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine. Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence.
+              </p>
+              
+              <p className="text-lg">
+                Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
               </p>
             </div>
 
@@ -80,17 +84,17 @@ const About = () => {
               <Card className="p-6 border-l-4 border-french-gold">
                 <h3 className="text-xl font-bold text-french-navy mb-3">Ma formation</h3>
                 <ul className="list-disc list-inside space-y-2 text-french-gray">
-                  <li>Master en Gestion de Patrimoine</li>
-                  <li>Diplôme de l'ESG Finance</li>
+                  <li>Master Grande Ecole Spé Finance Internationale</li>
+                  <li>Double diplôme de l'ESC Pau et de la London School of Economics.</li>
                   <li>Certification AMF</li>
-                  <li>Formation continue en droit patrimonial</li>
+                  <li>Formation continue en ingénierie patrimonial</li>
                 </ul>
               </Card>
               
               <Card className="p-6 border-l-4 border-french-gold">
                 <h3 className="text-xl font-bold text-french-navy mb-3">Mes domaines d'expertise</h3>
                 <ul className="list-disc list-inside space-y-2 text-french-gray">
-                  <li>Conseil en investissement</li>
+                  <li>Conseil en investissement (tout type d'actifs)</li>
                   <li>Optimisation fiscale</li>
                   <li>Stratégies de retraite</li>
                   <li>Transmission de patrimoine</li>

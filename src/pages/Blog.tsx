@@ -23,7 +23,7 @@ const Blog = () => {
       title: "Les Fondamentaux de l'Investissement Immobilier en 2025",
       excerpt: "Découvrez les bases essentielles pour réussir vos investissements immobiliers dans le contexte économique actuel.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Thomas Durand",
+      author: "Alice Goyec",
       date: "12 avril 2025",
       readTime: "8 min",
       category: "Immobilier"
@@ -33,7 +33,7 @@ const Blog = () => {
       title: "Comment Optimiser sa Fiscalité en France",
       excerpt: "Stratégies légales et astuces pour réduire votre imposition et maximiser votre patrimoine.",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Sophie Martin",
+      author: "Alice Goyec",
       date: "5 avril 2025",
       readTime: "10 min",
       category: "Fiscalité"
@@ -43,27 +43,17 @@ const Blog = () => {
       title: "Les Erreurs à Éviter dans la Gestion de Portefeuille",
       excerpt: "Analyse des pièges courants qui peuvent compromettre vos performances financières à long terme.",
       image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Marc Leblanc",
+      author: "Alice Goyec",
       date: "28 mars 2025",
       readTime: "7 min",
       category: "Investissement"
-    },
-    {
-      id: 4,
-      title: "La Loi Pinel 2025 : Ce qui Change pour les Investisseurs",
-      excerpt: "Toutes les modifications du dispositif Pinel et comment les intégrer dans votre stratégie d'investissement.",
-      image: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Julie Dupont",
-      date: "15 mars 2025",
-      readTime: "9 min",
-      category: "Immobilier"
     },
     {
       id: 5,
       title: "Préparer sa Retraite : Stratégies Patrimoniales Efficaces",
       excerpt: "Comment construire un patrimoine solide pour assurer vos revenus pendant la retraite.",
       image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Pierre Moreau",
+      author: "Alice Goyec",
       date: "2 mars 2025",
       readTime: "11 min",
       category: "Patrimoine"
@@ -73,10 +63,20 @@ const Blog = () => {
       title: "Les SCPI : Une Alternative aux Investissements Immobiliers Directs",
       excerpt: "Tout ce que vous devez savoir sur les Sociétés Civiles de Placement Immobilier et leur place dans votre stratégie.",
       image: "https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      author: "Hélène Girard",
+      author: "Alice Goyec",
       date: "20 février 2025",
       readTime: "6 min",
       category: "Immobilier"
+    },
+    {
+      id: 7,
+      title: "Private Equity : L'investissement dans l'économie non cotée",
+      excerpt: "Découvrez les opportunités et les risques du Private Equity pour diversifier votre patrimoine.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      author: "Alice Goyec",
+      date: "15 février 2025",
+      readTime: "9 min",
+      category: "Investissement"
     }
   ];
 
