@@ -24,7 +24,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 1,
     name: "Consultation Patrimoniale",
     category: "conseil",
-    price: 150,
+    price: 0,
     image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Analyse complète de votre situation financière et conseils personnalisés pour optimiser votre patrimoine.",
     fullDescription: "Notre service de consultation patrimoniale vous offre une analyse approfondie de votre situation financière actuelle. Nos experts examinent l'ensemble de vos actifs, passifs, revenus et objectifs à court et long terme pour vous fournir des recommandations sur mesure qui optimiseront votre patrimoine tout en respectant votre profil de risque et vos aspirations.",
@@ -58,7 +58,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 2,
     name: "Stratégie d'Investissement",
     category: "investissement",
-    price: 200,
+    price: 0,
     image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Élaboration d'une stratégie d'investissement adaptée à vos objectifs et votre profil de risque.",
     fullDescription: "Notre service de stratégie d'investissement vous propose une approche méticuleuse pour optimiser vos placements. Nous combinons analyse macroéconomique, étude des tendances de marché et évaluation de votre profil investisseur pour construire un portefeuille diversifié et performant qui correspond à vos objectifs financiers à court, moyen et long terme.",
@@ -90,11 +90,11 @@ const servicesData: ServiceDetailProps[] = [
   },
   {
     id: 3,
-    name: "Gestion de Portefeuille",
-    category: "gestion",
-    price: 250,
+    name: "Construction de Portefeuille",
+    category: "investissement",
+    price: 0,
     image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    description: "Suivi et optimisation régulière de vos placements financiers pour maximiser votre rendement.",
+    description: "Notre service de gestion de portefeuille vous propose de vous accompagner dans la sélection des actions de votre PEA ou CTO. Notre expertise sur les investissements pertinents à long terme est basée sur des stratégies éprouvées par les plus grands investisseurs tels que Graham, Buffet ou Lynch.",
     fullDescription: "Notre service de gestion de portefeuille offre un suivi actif de vos investissements par des professionnels expérimentés. Nous surveillons quotidiennement l'évolution des marchés et prenons les décisions nécessaires pour protéger et faire fructifier votre capital conformément à votre stratégie d'investissement établie, tout en vous tenant régulièrement informé des performances et ajustements réalisés.",
     benefits: [
       "Gestion active par des professionnels qualifiés",
@@ -126,7 +126,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 4,
     name: "Planification Retraite",
     category: "conseil",
-    price: 180,
+    price: 0,
     image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Préparation de votre avenir financier pour assurer une retraite sereine et confortable.",
     fullDescription: "Notre service de planification retraite vous aide à préparer cette étape cruciale de votre vie. Nous évaluons votre situation actuelle, estimons vos besoins futurs et élaborons un plan d'épargne et d'investissement adapté pour vous assurer des revenus suffisants pendant votre retraite, tout en optimisant votre situation fiscale actuelle et future.",
@@ -160,16 +160,17 @@ const servicesData: ServiceDetailProps[] = [
     id: 5,
     name: "Investissement Immobilier",
     category: "immobilier",
-    price: 220,
+    price: 0,
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    description: "Accompagnement dans l'acquisition de biens immobiliers à fort potentiel de rentabilité.",
-    fullDescription: "Notre service d'investissement immobilier vous guide dans la sélection, l'acquisition et la gestion de biens immobiliers à fort potentiel. Nous analysons les marchés locaux, identifions les opportunités attractives et vous accompagnons à chaque étape, du financement à la mise en location, pour optimiser votre rendement tout en sécurisant votre investissement.",
+    description: "Accompagnement dans l'acquisition de biens immobiliers de rentabilité et dispositifs de défiscalisation immobilière (Denormandie, Malraux, Monuments historiques).",
+    fullDescription: "Notre service d'investissement immobilier vous guide dans la sélection, l'acquisition et la gestion de biens immobiliers à fort potentiel. Nous analysons les marchés locaux, identifions les opportunités attractives et vous accompagnons à chaque étape, du financement à la mise en location, pour optimiser votre rendement. Nous proposons également un accompagnement dans les dispositifs de défiscalisation immobilière comme Denormandie, Malraux et Monuments Historiques pour allier investissement et optimisation fiscale.",
     benefits: [
       "Accès à des opportunités d'investissement sélectionnées",
       "Analyse détaillée des marchés immobiliers locaux",
       "Optimisation du financement et de la structure d'acquisition",
       "Conseils sur la gestion locative et la valorisation du bien",
-      "Stratégies de défiscalisation immobilière adaptées"
+      "Stratégies de défiscalisation immobilière adaptées",
+      "Accompagnement dans les dispositifs Denormandie, Malraux et Monuments Historiques"
     ],
     process: [
       {
@@ -194,7 +195,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 6,
     name: "Optimisation Fiscale",
     category: "fiscalité",
-    price: 190,
+    price: 0,
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Stratégies légales pour réduire votre charge fiscale et maximiser votre patrimoine.",
     fullDescription: "Notre service d'optimisation fiscale vous propose des stratégies légales et éthiques pour minimiser votre imposition. Nous analysons en détail votre situation fiscale personnelle et professionnelle pour identifier toutes les opportunités de réduction d'impôts, en tirant parti des niches fiscales adaptées à votre profil et vos objectifs patrimoniaux.",
@@ -226,44 +227,10 @@ const servicesData: ServiceDetailProps[] = [
   },
   {
     id: 7,
-    name: "Défiscalisation Immobilière",
-    category: "immobilier",
-    price: 210,
-    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    description: "Dispositifs Pinel, Denormandie, Malraux pour investir tout en réduisant vos impôts.",
-    fullDescription: "Notre service de défiscalisation immobilière vous permet de réaliser des investissements immobiliers stratégiques qui génèrent des avantages fiscaux substantiels. Nous vous guidons dans le choix du dispositif le plus adapté à votre situation (Pinel, Denormandie, Malraux, Monuments Historiques) et vous accompagnons à chaque étape pour maximiser vos avantages fiscaux tout en constituant un patrimoine immobilier de qualité.",
-    benefits: [
-      "Réduction d'impôt importante et immédiate",
-      "Constitution d'un patrimoine immobilier de qualité",
-      "Sélection rigoureuse des programmes immobiliers",
-      "Équilibre optimal entre avantage fiscal et rentabilité",
-      "Sécurisation juridique et fiscale de l'investissement"
-    ],
-    process: [
-      {
-        title: "Analyse fiscale",
-        description: "Évaluation de votre situation fiscale pour déterminer le dispositif et le montant d'investissement optimaux."
-      },
-      {
-        title: "Sélection du dispositif",
-        description: "Choix du dispositif de défiscalisation le plus adapté à vos objectifs et contraintes."
-      },
-      {
-        title: "Sélection du bien",
-        description: "Identification des programmes immobiliers de qualité répondant aux critères du dispositif choisi."
-      },
-      {
-        title: "Suivi et déclaration",
-        description: "Accompagnement dans les démarches administratives et fiscales pour sécuriser votre avantage fiscal."
-      }
-    ]
-  },
-  {
-    id: 8,
     name: "Transmission de Patrimoine",
     category: "succession",
-    price: 230,
-    image: "https://images.unsplash.com/photo-1586527317521-54e53e996909?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    price: 0,
+    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Préparation et optimisation de la transmission de votre patrimoine à vos héritiers.",
     fullDescription: "Notre service de transmission de patrimoine vous aide à planifier efficacement la transmission de vos biens à vos héritiers. Nous élaborons une stratégie successorale personnalisée qui optimise la fiscalité, préserve l'équilibre familial et respecte vos volontés, tout en vous accompagnant dans la mise en place des outils juridiques adaptés (donation, testament, démembrement, assurance-vie...).",
     benefits: [
@@ -289,6 +256,40 @@ const servicesData: ServiceDetailProps[] = [
       {
         title: "Actualisation périodique",
         description: "Suivi et adaptation de votre stratégie selon l'évolution de votre situation et de la législation."
+      }
+    ]
+  },
+  {
+    id: 8,
+    name: "Optimisation Trésorerie d'Entreprise",
+    category: "entreprise",
+    price: 0,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Optimisation de la gestion de trésorerie et des investissements d'entreprise pour maximiser la rentabilité.",
+    fullDescription: "Notre service d'optimisation de trésorerie d'entreprise vous aide à maximiser le rendement de vos excédents de trésorerie tout en préservant la liquidité nécessaire à votre activité. Nous analysons vos flux de trésorerie, identifions les opportunités de placement et mettons en place des stratégies adaptées à vos besoins opérationnels et votre profil de risque.",
+    benefits: [
+      "Maximisation du rendement des excédents de trésorerie",
+      "Préservation de la liquidité opérationnelle",
+      "Diversification des placements selon votre profil de risque",
+      "Optimisation fiscale des investissements d'entreprise",
+      "Suivi et reporting régulier des performances"
+    ],
+    process: [
+      {
+        title: "Analyse des flux de trésorerie",
+        description: "Étude détaillée de vos flux financiers pour identifier les excédents disponibles pour placement."
+      },
+      {
+        title: "Définition de la stratégie",
+        description: "Élaboration d'une stratégie de placement adaptée à vos besoins de liquidité et objectifs de rentabilité."
+      },
+      {
+        title: "Mise en place des solutions",
+        description: "Implémentation des solutions de placement recommandées (comptes à terme, SICAV, obligations...)."
+      },
+      {
+        title: "Suivi et optimisation",
+        description: "Monitoring continu des performances et ajustements selon l'évolution de vos besoins."
       }
     ]
   }
@@ -363,10 +364,9 @@ const ServiceDetail = () => {
 
           <div className="lg:col-span-1">
             <div className="bg-french-cream rounded-lg p-6 sticky top-24">
-              <h3 className="text-xl font-semibold text-french-navy mb-2">{service.name}</h3>
-              <p className="text-2xl font-bold text-french-gold mb-4">{service.price} €</p>
+              <h3 className="text-xl font-semibold text-french-navy mb-4">{service.name}</h3>
               <p className="text-french-gray mb-6">
-                Prix pour une consultation initiale. Des services personnalisés peuvent être proposés selon vos besoins spécifiques.
+                Bénéficiez d'un accompagnement personnalisé adapté à vos besoins spécifiques et vos objectifs patrimoniaux.
               </p>
               <div className="space-y-4">
                 <Link to="/contact">
@@ -375,12 +375,12 @@ const ServiceDetail = () => {
                     Nous contacter
                   </Button>
                 </Link>
-                <Link to="/rendez-vous">
+                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-french-gold hover:bg-french-gold/90 flex items-center justify-center">
                     <Calendar className="mr-2 h-4 w-4" />
-                    Prendre rendez-vous
+                    Bilan Patrimonial offert
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

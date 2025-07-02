@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Clock, Calendar } from "lucide-react";
+import { MapPin, Clock, Calendar, Lightbulb, Users, Zap, GraduationCap, Briefcase, User } from "lucide-react";
 
 const Carriere = () => {
   return (
@@ -12,19 +12,184 @@ const Carriere = () => {
           J'aide les talents passionnés par l'investissement à lancer leur cabinet de gestion de patrimoine, pour en savoir plus n'hésitez pas à me contacter.
         </p>
         
-        <div className="text-center">
+        <div className="text-center mb-12">
           <p className="text-lg text-french-gray max-w-2xl mx-auto mb-12">
             Nous recherchons des talents passionnés par la gestion de patrimoine pour accompagner nos clients dans la réalisation de leurs objectifs financiers.
           </p>
-          
-          <div className="flex justify-center">
-            <Button 
-              className="bg-french-navy hover:bg-french-navy/90 text-white px-8 py-3"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Nous contacter
-            </Button>
+        </div>
+
+        {/* Avantages Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-french-navy text-center mb-8">Pourquoi nous rejoindre ?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="mx-auto bg-french-cream rounded-full p-3 w-16 h-16 flex items-center justify-center mb-4">
+                  <Lightbulb className="h-8 w-8 text-french-gold" />
+                </div>
+                <CardTitle className="text-lg">Stratégie innovante</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-french-gray">
+                  Bénéficiez d'une approche moderne et digitalisée avec une application dédiée à l'accompagnement de vos clients
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="mx-auto bg-french-cream rounded-full p-3 w-16 h-16 flex items-center justify-center mb-4">
+                  <Users className="h-8 w-8 text-french-gold" />
+                </div>
+                <CardTitle className="text-lg">Réseau Reconnu</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-french-gray">
+                  Rejoignez un groupement de conseillers indépendants avec plus de 20 ans d'expériences et une expertise reconnue
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="mx-auto bg-french-cream rounded-full p-3 w-16 h-16 flex items-center justify-center mb-4">
+                  <Zap className="h-8 w-8 text-french-gold" />
+                </div>
+                <CardTitle className="text-lg">Flexibilité Totale</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-french-gray">
+                  Développez votre activité à votre rythme, que ce soit en complément de revenus ou comme activité principale
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="mx-auto bg-french-cream rounded-full p-3 w-16 h-16 flex items-center justify-center mb-4">
+                  <GraduationCap className="h-8 w-8 text-french-gold" />
+                </div>
+                <CardTitle className="text-lg">Apprentissage collectif</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-french-gray">
+                  Monter rapidement en compétence en apprenant à argumenter vos choix d'allocation face à des conseillers expérimentés
+                </p>
+              </CardContent>
+            </Card>
           </div>
+        </div>
+
+        {/* Nos postes Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-french-navy text-center mb-8">Nos postes</h2>
+          <div className="space-y-8">
+            {/* Conseiller Patrimonial */}
+            <Card className="border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-french-cream rounded-full p-3">
+                    <Briefcase className="h-8 w-8 text-french-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Conseiller(ère) Patrimonial</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Description</h4>
+                    <p className="text-french-gray">
+                      Le Conseiller Patrimonial gère l'ensemble du processus : analyse des besoins clients, élaboration de stratégies patrimoniales personnalisées, et suivi complet des investissements en gestion de patrimoine.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Missions</h4>
+                    <ul className="text-french-gray space-y-1">
+                      <li>• Analyse des objectifs patrimoniaux clients</li>
+                      <li>• Création de stratégies d'investissement sur mesure</li>
+                      <li>• Présentation et suivi patrimonial personnalisé</li>
+                      <li>• Gestion complète du portefeuille client</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Consultant Patrimoine */}
+            <Card className="border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-french-cream rounded-full p-3">
+                    <User className="h-8 w-8 text-french-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Consultant(e) Patrimoine</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Description</h4>
+                    <p className="text-french-gray">
+                      Le Consultant Patrimoine anime l'expérience client Filianse, découvre les besoins patrimoniaux et accompagne dans les projets d'investissement.
+                      <br /><br />
+                      Poste idéal pour débuter dans le conseil en patrimoine avec possibilité d'évolution vers conseiller patrimonial senior.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Missions</h4>
+                    <ul className="text-french-gray space-y-1">
+                      <li>• Animation de l'expérience client Filianse</li>
+                      <li>• Identification des objectifs patrimoniaux</li>
+                      <li>• Collaboration avec l'ingénieur patrimonial</li>
+                      <li>• Développement d'équipe commerciale</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Ambassadeur Patrimoine */}
+            <Card className="border-2 hover:border-french-gold transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-french-cream rounded-full p-3">
+                    <Users className="h-8 w-8 text-french-gold" />
+                  </div>
+                  <CardTitle className="text-xl">Ambassadeur Patrimoine</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Description</h4>
+                    <p className="text-french-gray">
+                      L'Ambassadeur Patrimoine initie le contact client, identifie les projets patrimoniaux et oriente vers les spécialistes en gestion de patrimoine.
+                      <br /><br />
+                      Emploi temps partiel idéal pour découvrir le métier de conseiller patrimonial sans contraintes.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-french-navy mb-3">Missions</h4>
+                    <ul className="text-french-gray space-y-1">
+                      <li>• Introduction à l'expérience Filianse</li>
+                      <li>• Identification des projets de vie</li>
+                      <li>• Orientation vers les experts patrimoine</li>
+                      <li>• Activité flexible et évolutive</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+        
+        <div className="flex justify-center">
+          <Button 
+            className="bg-french-navy hover:bg-french-navy/90 text-white px-8 py-3"
+            onClick={() => window.location.href = '/contact'}
+          >
+            Nous contacter
+          </Button>
         </div>
       </div>
     </div>

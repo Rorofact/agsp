@@ -68,12 +68,6 @@ const solutionsData = {
       link: "/solutions/forets-terres-agricoles"
     },
     {
-      title: "Art et collection",
-      description: "Conseil en investissement dans des actifs de passion avec potentiel de valorisation.",
-      icon: <Layers className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/art-collection"
-    },
-    {
       title: "Vin",
       description: "Investissement dans les grands crus pour une diversification patrimoniale originale et passionnante.",
       icon: <Layers className="h-10 w-10 text-french-gold" />,
@@ -138,11 +132,11 @@ const Solutions = () => {
                 ))}
               </div>
               <div className="flex justify-center mt-10">
-                <Link to="/rendez-vous">
+                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-french-gold hover:bg-french-gold/90 text-white">
-                    Prendre rendez-vous pour en discuter
+                    Bilan Patrimonial offert
                   </Button>
-                </Link>
+                </a>
               </div>
             </TabsContent>
           ))}

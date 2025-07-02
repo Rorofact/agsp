@@ -28,7 +28,6 @@ import ComptesTitres from "./pages/solutions/ComptesTitres";
 import FondsISR from "./pages/solutions/FondsISR";
 import EnergiesRenouvelables from "./pages/solutions/EnergiesRenouvelables";
 import ForetsTerresAgricoles from "./pages/solutions/ForetsTerresAgricoles";
-import ArtCollection from "./pages/solutions/ArtCollection";
 import Vin from "./pages/solutions/Vin";
 import PrivateEquity from "./pages/solutions/PrivateEquity";
 
@@ -63,7 +62,6 @@ const App = () => (
             <Route path="/solutions/fonds-isr" element={<FondsISR />} />
             <Route path="/solutions/energies-renouvelables" element={<EnergiesRenouvelables />} />
             <Route path="/solutions/forets-terres-agricoles" element={<ForetsTerresAgricoles />} />
-            <Route path="/solutions/art-collection" element={<ArtCollection />} />
             <Route path="/solutions/vin" element={<Vin />} />
             <Route path="/solutions/private-equity" element={<PrivateEquity />} />
             
