@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
-import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 import ChatBox from "./components/chat/ChatBox";
 import Carriere from "./pages/Carriere";
@@ -22,17 +21,16 @@ import BlogArticle from "./pages/blog/BlogArticle";
 // Solution detail pages
 import InvestissementLocatif from "./pages/solutions/InvestissementLocatif";
 import SCPI from "./pages/solutions/SCPI";
-import LoiPinel from "./pages/solutions/LoiPinel";
+import ImmobilierDefiscalisant from "./pages/solutions/ImmobilierDefiscalisant";
 import AssuranceVie from "./pages/solutions/AssuranceVie";
 import PEA from "./pages/solutions/PEA";
 import ComptesTitres from "./pages/solutions/ComptesTitres";
 import FondsISR from "./pages/solutions/FondsISR";
 import EnergiesRenouvelables from "./pages/solutions/EnergiesRenouvelables";
-import CreationEntreprise from "./pages/solutions/CreationEntreprise";
-import RachatEntreprise from "./pages/solutions/RachatEntreprise";
-import OrMetauxPrecieux from "./pages/solutions/OrMetauxPrecieux";
 import ForetsTerresAgricoles from "./pages/solutions/ForetsTerresAgricoles";
 import ArtCollection from "./pages/solutions/ArtCollection";
+import Vin from "./pages/solutions/Vin";
+import PrivateEquity from "./pages/solutions/PrivateEquity";
 
 const queryClient = new QueryClient();
 
@@ -50,7 +48,6 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogArticle />} />
             <Route path="/about" element={<About />} />
-            <Route path="/rendez-vous" element={<Appointment />} />
             <Route path="/carriere" element={<Carriere />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/assurance-emprunteur" element={<AssuranceEmprunteur />} />
@@ -59,17 +56,16 @@ const App = () => (
             {/* Solution detail pages */}
             <Route path="/solutions/investissement-locatif" element={<InvestissementLocatif />} />
             <Route path="/solutions/scpi" element={<SCPI />} />
-            <Route path="/solutions/loi-pinel" element={<LoiPinel />} />
+            <Route path="/solutions/immobilier-defiscalisant" element={<ImmobilierDefiscalisant />} />
             <Route path="/solutions/assurance-vie" element={<AssuranceVie />} />
             <Route path="/solutions/pea" element={<PEA />} />
             <Route path="/solutions/comptes-titres" element={<ComptesTitres />} />
             <Route path="/solutions/fonds-isr" element={<FondsISR />} />
             <Route path="/solutions/energies-renouvelables" element={<EnergiesRenouvelables />} />
-            <Route path="/solutions/creation-entreprise" element={<CreationEntreprise />} />
-            <Route path="/solutions/rachat-entreprise" element={<RachatEntreprise />} />
-            <Route path="/solutions/or-metaux-precieux" element={<OrMetauxPrecieux />} />
             <Route path="/solutions/forets-terres-agricoles" element={<ForetsTerresAgricoles />} />
             <Route path="/solutions/art-collection" element={<ArtCollection />} />
+            <Route path="/solutions/vin" element={<Vin />} />
+            <Route path="/solutions/private-equity" element={<PrivateEquity />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>

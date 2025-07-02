@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShieldCheck, TrendingUp, Scale, BarChart4, Medal, Mail, PhoneCall, Calendar, Building } from "lucide-react";
+import { ShieldCheck, TrendingUp, Scale, BarChart4, Medal, PhoneCall, Calendar, Building } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Home = () => {
   return (
@@ -22,9 +23,14 @@ const Home = () => {
                 <Link to="/services">Nos Services</Link>
               </Button>
               <Button variant="outline" className="border-white hover:bg-white/10 text-french-gold text-lg px-8 py-6">
-                <Link to="/rendez-vous">Prendre rendez-vous</Link>
+                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                  Bilan Patrimonial offert
+                </a>
               </Button>
             </div>
+            <p className="text-lg mt-6 text-french-gold font-semibold">
+              10 ans d'expérience. Conseil indépendant
+            </p>
           </div>
         </div>
       </section>
@@ -90,7 +96,7 @@ const Home = () => {
                   </div>
                   <h3 className="font-semibold text-xl mb-2">Conseil Personnalisé</h3>
                   <p className="text-french-gray">
-                    Un accompagnement sur mesure pour définir et atteindre vos objectifs financiers à court et long terme.
+                    Aucun produit bancaire ou d'assurance en propre, pour des conseils objectifs et un accompagnement sur mesure.
                   </p>
                 </div>
               </CardContent>
@@ -114,7 +120,7 @@ const Home = () => {
               <div className="rounded-xl overflow-hidden shadow-lg bg-white">
                 <div className="aspect-w-3 aspect-h-4 bg-french-cream">
                   <div className="flex items-center justify-center h-full py-8">
-                    <span className="text-4xl font-semibold text-french-navy">AG</span>
+                    <div className="w-24 h-24 bg-french-navy rounded-full"></div>
                   </div>
                 </div>
                 <div className="p-6 bg-white">
@@ -128,24 +134,22 @@ const Home = () => {
                     </div>
                     <div className="flex items-center">
                       <Building className="h-5 w-5 text-french-gold mr-3" />
-                      <span>133 rue du Ranelagh<br />75016 Paris, France</span>
+                      <span>Capacités IAS, IOBSP, CIF, IMMO</span>
                     </div>
                     <div className="flex items-center">
                       <PhoneCall className="h-5 w-5 text-french-gold mr-3" />
-                      <span>01 23 45 67 89</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="h-5 w-5 text-french-gold mr-3" />
-                      <span>ag.strategiepatrimoine@gmail.com</span>
+                      <span>Membre de la CNCEF Patrimoine</span>
                     </div>
                     <div className="flex items-center">
                       <Calendar className="h-5 w-5 text-french-gold mr-3" />
-                      <span>Disponible sur rendez-vous</span>
+                      <span>Inscrite à l'ORIAS sous le n° 25005313</span>
                     </div>
                   </div>
                   
                   <Button className="w-full mt-6 bg-french-navy text-white">
-                    <Link to="/contact">Me contacter</Link>
+                    <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                      Me contacter
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -164,11 +168,19 @@ const Home = () => {
                 </p>
                 
                 <p className="text-lg">
-                  J'ai ensuite voulu me reconnecter à l'économie réelle et pouvoir mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne. Aujourd'hui j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
+                  J'ai ensuite voulu me reconnecter à l'économie réelle et pouvoir mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne.
                 </p>
 
                 <p className="text-lg">
-                  Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence. Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
+                  Aujourd'hui j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
+                </p>
+
+                <p className="text-lg">
+                  Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence.
+                </p>
+
+                <p className="text-lg">
+                  Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
                 </p>
               </div>
 
@@ -188,7 +200,7 @@ const Home = () => {
                   <ul className="list-disc list-inside space-y-2 text-french-gray">
                     <li>Conseil en investissement (tout type d'actifs)</li>
                     <li>Optimisation fiscale</li>
-                    <li>Stratégies de retraite</li>
+                    <li>Optimisation trésorerie d'entreprise</li>
                     <li>Transmission de patrimoine</li>
                     <li>Protection familiale</li>
                   </ul>
@@ -224,6 +236,67 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white" id="faq">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-french-navy mb-4">FAQ</h2>
+            <p className="text-french-gray max-w-2xl mx-auto">
+              Retrouvez les réponses aux questions les plus fréquemment posées
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left">
+                  En quoi consiste exactement votre accompagnement en gestion de patrimoine ?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Mon rôle est de vous accompagner dans l'organisation et l'optimisation de votre situation financière. Que ce soit pour investir, réduire votre fiscalité, préparer votre retraite ou transmettre votre patrimoine, je vous propose des solutions personnalisées, en toute indépendance et en fonction de vos objectifs.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left">
+                  Est-ce que vous travaillez uniquement avec des personnes déjà riches ?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Pas du tout ! La gestion de patrimoine concerne tout le monde, dès qu'on souhaite mieux gérer son argent, préparer des projets ou sécuriser son avenir financier.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left">
+                  Êtes-vous indépendante ou rattachée à une banque ou un assureur ?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Je suis conseillère indépendante, membre du réseau Inovea, un groupement de professionnels en gestion de patrimoine. Cette structure me permet d'avoir accès à un large panel de partenaires (banques, assureurs, sociétés de gestion) tout en conservant une totale liberté dans mes recommandations. Mon objectif : vous proposer les solutions les plus adaptées à votre situation, sans aucun conflit d'intérêt.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left">
+                  Proposez-vous des solutions d'investissement responsables ou durables ?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Absolument. Si vous êtes sensible à l'impact de vos placements, je vous oriente vers des supports responsables, éthiques et alignés avec vos valeurs.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left">
+                  Puis-je être accompagné à distance ?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Oui, les rendez-vous peuvent se faire à distance, en visioconférence, où que vous soyez en France. Je m'adapte à votre emploi du temps pour plus de flexibilité et de confort.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -237,7 +310,9 @@ const Home = () => {
               </p>
             </div>
             <Button className="bg-french-navy hover:bg-french-navy/90 text-white text-lg px-8 py-6">
-              <Link to="/rendez-vous">Prendre Rendez-vous</Link>
+              <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                Bilan Patrimonial offert
+              </a>
             </Button>
           </div>
         </div>

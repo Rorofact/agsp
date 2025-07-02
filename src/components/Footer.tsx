@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
@@ -73,16 +74,16 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-0.5 text-french-gold" />
                 <span className="text-sm text-gray-300">
-                  123 Avenue des Champs-Élysées<br />75008 Paris, France
+                  133 rue du Ranelagh<br />75016 Paris, France
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 text-french-gold" />
-                <span className="text-sm text-gray-300">+33 1 23 45 67 89</span>
+                <span className="text-sm text-gray-300">07 82 25 96 07</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-french-gold" />
-                <span className="text-sm text-gray-300">contact@agstrategiepatrimoine.fr</span>
+                <span className="text-sm text-gray-300">ag.strategiepatrimoine@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -92,6 +93,18 @@ const Footer = () => {
           <p className="text-center text-xs text-gray-400">
             © {new Date().getFullYear()} AG Stratégie Patrimoine. Tous droits réservés.
           </p>
+        </div>
+        
+        <div className="border-t border-gray-700 mt-6 pt-6">
+          <div className="text-xs text-gray-400 space-y-2">
+            <h4 className="font-medium text-french-gold mb-2">Mentions Légales</h4>
+            <p>
+              Alice Goyec, immatriculée au RSAC DE PARIS : 940 335 532. Courtier en assurance, Conseil en Investissements Financiers et Intermédiaires en Opération de banque et service de paiement N°ORIAS 25005313 www.orias.fr CIF adhérent à la CNCEF sous le numéro 25/859773 (www.anacofi.asso.fr) Carte de Transaction sur immeubles et fonds de commerce sans détention de fonds N° CPI délivrée par la CCI de l'hérault.
+            </p>
+            <p>
+              Conformément aux articles L.616-1 et R.616-1 du code de la consommation, nous proposons un dispositif de médiation de la consommation. L'entité de médiation retenue est : CNPM - MEDIATION DE LA CONSOMMATION. En cas de litige, vous pouvez déposer votre réclamation sur son site : https://cnpm-mediation-consommation.eu ou par voie postale en écrivant à CNPM - MEDIATION - CONSOMMATION - 27 avenue de la libération - 42400 Saint-Chamond
+            </p>
+          </div>
         </div>
       </div>
     </footer>
