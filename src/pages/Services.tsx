@@ -65,14 +65,14 @@ const Services = () => {
       id: 7,
       name: "Transmission de Patrimoine",
       category: "succession",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Préparation et optimisation de la transmission de votre patrimoine à vos héritiers."
     },
     {
       id: 8,
       name: "Optimisation Trésorerie d'Entreprise",
       category: "entreprise",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
       description: "Optimisation de la gestion de trésorerie et des investissements d'entreprise pour maximiser la rentabilité."
     },
   ];

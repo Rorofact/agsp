@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Phone, Calendar } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 
 interface SolutionDetailProps {
   title: string;
@@ -76,18 +76,12 @@ const SolutionDetailTemplate: React.FC<SolutionDetailProps> = ({
                 Nos conseillers sont à votre disposition pour répondre à vos questions et vous accompagner dans votre projet.
               </p>
               <div className="space-y-4">
-                <Link to="/contact">
-                  <Button className="w-full bg-french-navy hover:bg-french-navy/90 flex items-center justify-center">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Nous contacter
-                  </Button>
-                </Link>
-                <Link to="/rendez-vous">
+                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-french-gold hover:bg-french-gold/90 flex items-center justify-center">
                     <Calendar className="mr-2 h-4 w-4" />
-                    Prendre rendez-vous
+                    Prendre Rendez-vous
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

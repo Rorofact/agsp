@@ -74,7 +74,7 @@ const solutionsData = {
       link: "/solutions/vin"
     },
     {
-      title: "Private Equity",
+      title: "Private Equity", 
       description: "Investissement dans des entreprises non cotées pour un potentiel de rendement élevé.",
       icon: <Layers className="h-10 w-10 text-french-gold" />,
       link: "/solutions/private-equity"
@@ -134,7 +134,7 @@ const Solutions = () => {
               <div className="flex justify-center mt-10">
                 <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-french-gold hover:bg-french-gold/90 text-white">
-                    Bilan Patrimonial offert
+                    Prendre Rendez-vous
                   </Button>
                 </a>
               </div>

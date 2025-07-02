@@ -1,14 +1,14 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Phone, Calendar } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import NotFound from '../NotFound';
 
 interface ServiceDetailProps {
   id: number;
   name: string;
   category: string;
-  price: number;
   image: string;
   description: string;
   fullDescription?: string;
@@ -24,7 +24,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 1,
     name: "Consultation Patrimoniale",
     category: "conseil",
-    price: 0,
     image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Analyse complète de votre situation financière et conseils personnalisés pour optimiser votre patrimoine.",
     fullDescription: "Notre service de consultation patrimoniale vous offre une analyse approfondie de votre situation financière actuelle. Nos experts examinent l'ensemble de vos actifs, passifs, revenus et objectifs à court et long terme pour vous fournir des recommandations sur mesure qui optimiseront votre patrimoine tout en respectant votre profil de risque et vos aspirations.",
@@ -58,7 +57,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 2,
     name: "Stratégie d'Investissement",
     category: "investissement",
-    price: 0,
     image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Élaboration d'une stratégie d'investissement adaptée à vos objectifs et votre profil de risque.",
     fullDescription: "Notre service de stratégie d'investissement vous propose une approche méticuleuse pour optimiser vos placements. Nous combinons analyse macroéconomique, étude des tendances de marché et évaluation de votre profil investisseur pour construire un portefeuille diversifié et performant qui correspond à vos objectifs financiers à court, moyen et long terme.",
@@ -92,7 +90,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 3,
     name: "Construction de Portefeuille",
     category: "investissement",
-    price: 0,
     image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Notre service de gestion de portefeuille vous propose de vous accompagner dans la sélection des actions de votre PEA ou CTO. Notre expertise sur les investissements pertinents à long terme est basée sur des stratégies éprouvées par les plus grands investisseurs tels que Graham, Buffet ou Lynch.",
     fullDescription: "Notre service de gestion de portefeuille offre un suivi actif de vos investissements par des professionnels expérimentés. Nous surveillons quotidiennement l'évolution des marchés et prenons les décisions nécessaires pour protéger et faire fructifier votre capital conformément à votre stratégie d'investissement établie, tout en vous tenant régulièrement informé des performances et ajustements réalisés.",
@@ -126,7 +123,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 4,
     name: "Planification Retraite",
     category: "conseil",
-    price: 0,
     image: "https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Préparation de votre avenir financier pour assurer une retraite sereine et confortable.",
     fullDescription: "Notre service de planification retraite vous aide à préparer cette étape cruciale de votre vie. Nous évaluons votre situation actuelle, estimons vos besoins futurs et élaborons un plan d'épargne et d'investissement adapté pour vous assurer des revenus suffisants pendant votre retraite, tout en optimisant votre situation fiscale actuelle et future.",
@@ -160,7 +156,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 5,
     name: "Investissement Immobilier",
     category: "immobilier",
-    price: 0,
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Accompagnement dans l'acquisition de biens immobiliers de rentabilité et dispositifs de défiscalisation immobilière (Denormandie, Malraux, Monuments historiques).",
     fullDescription: "Notre service d'investissement immobilier vous guide dans la sélection, l'acquisition et la gestion de biens immobiliers à fort potentiel. Nous analysons les marchés locaux, identifions les opportunités attractives et vous accompagnons à chaque étape, du financement à la mise en location, pour optimiser votre rendement. Nous proposons également un accompagnement dans les dispositifs de défiscalisation immobilière comme Denormandie, Malraux et Monuments Historiques pour allier investissement et optimisation fiscale.",
@@ -195,7 +190,6 @@ const servicesData: ServiceDetailProps[] = [
     id: 6,
     name: "Optimisation Fiscale",
     category: "fiscalité",
-    price: 0,
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Stratégies légales pour réduire votre charge fiscale et maximiser votre patrimoine.",
     fullDescription: "Notre service d'optimisation fiscale vous propose des stratégies légales et éthiques pour minimiser votre imposition. Nous analysons en détail votre situation fiscale personnelle et professionnelle pour identifier toutes les opportunités de réduction d'impôts, en tirant parti des niches fiscales adaptées à votre profil et vos objectifs patrimoniaux.",
@@ -229,8 +223,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 7,
     name: "Transmission de Patrimoine",
     category: "succession",
-    price: 0,
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Préparation et optimisation de la transmission de votre patrimoine à vos héritiers.",
     fullDescription: "Notre service de transmission de patrimoine vous aide à planifier efficacement la transmission de vos biens à vos héritiers. Nous élaborons une stratégie successorale personnalisée qui optimise la fiscalité, préserve l'équilibre familial et respecte vos volontés, tout en vous accompagnant dans la mise en place des outils juridiques adaptés (donation, testament, démembrement, assurance-vie...).",
     benefits: [
@@ -263,8 +256,7 @@ const servicesData: ServiceDetailProps[] = [
     id: 8,
     name: "Optimisation Trésorerie d'Entreprise",
     category: "entreprise",
-    price: 0,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
     description: "Optimisation de la gestion de trésorerie et des investissements d'entreprise pour maximiser la rentabilité.",
     fullDescription: "Notre service d'optimisation de trésorerie d'entreprise vous aide à maximiser le rendement de vos excédents de trésorerie tout en préservant la liquidité nécessaire à votre activité. Nous analysons vos flux de trésorerie, identifions les opportunités de placement et mettons en place des stratégies adaptées à vos besoins opérationnels et votre profil de risque.",
     benefits: [
@@ -369,16 +361,10 @@ const ServiceDetail = () => {
                 Bénéficiez d'un accompagnement personnalisé adapté à vos besoins spécifiques et vos objectifs patrimoniaux.
               </p>
               <div className="space-y-4">
-                <Link to="/contact">
-                  <Button className="w-full bg-french-navy hover:bg-french-navy/90 flex items-center justify-center mb-2">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Nous contacter
-                  </Button>
-                </Link>
                 <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-french-gold hover:bg-french-gold/90 flex items-center justify-center">
                     <Calendar className="mr-2 h-4 w-4" />
-                    Bilan Patrimonial offert
+                    Prendre Rendez-vous
                   </Button>
                 </a>
               </div>

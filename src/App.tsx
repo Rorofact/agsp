@@ -14,7 +14,6 @@ import ChatBox from "./components/chat/ChatBox";
 import Carriere from "./pages/Carriere";
 import Solutions from "./pages/Solutions";
 import AssuranceEmprunteur from "./pages/AssuranceEmprunteur";
-import Contact from "./pages/Contact";
 import ServiceDetail from "./pages/services/ServiceDetail";
 import BlogArticle from "./pages/blog/BlogArticle";
 
@@ -50,7 +49,6 @@ const App = () => (
             <Route path="/carriere" element={<Carriere />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/assurance-emprunteur" element={<AssuranceEmprunteur />} />
-            <Route path="/contact" element={<Contact />} />
             
             {/* Solution detail pages */}
             <Route path="/solutions/investissement-locatif" element={<InvestissementLocatif />} />
