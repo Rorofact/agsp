@@ -1,8 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Target, Shield, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, Target, Shield, TrendingUp } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -15,9 +13,12 @@ const AboutSection = () => {
               <p className="text-lg text-french-gray">
                 Alice Goyec, conseillère en gestion de patrimoine, je vous accompagne dans la réalisation de vos projets financiers et patrimoniaux avec une approche personnalisée et professionnelle.
               </p>
-              <p className="text-french-gray">
-                Fort de plusieurs années d'expérience dans le secteur financier, je mets mon expertise au service de votre réussite patrimoniale. Ma mission est de vous aider à optimiser votre patrimoine et à préparer sereinement votre avenir.
-              </p>
+              <div className="space-y-2 text-french-gray">
+                <p>• 10+ ans d'expérience</p>
+                <p>• Capacités IAS, IOBSP, CIF, IMMO</p>
+                <p>• Membre de la CNCEF Patrimoine</p>
+                <p>• Inscrite à l'ORIAS sous le n° 25005313</p>
+              </div>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -50,13 +51,6 @@ const AboutSection = () => {
                 </CardContent>
               </Card>
             </div>
-            
-            <Link to="/about">
-              <Button className="bg-french-gold hover:bg-french-gold/90 text-white">
-                En savoir plus
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
           </div>
           
           <div className="relative">
