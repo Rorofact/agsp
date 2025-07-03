@@ -10,7 +10,6 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import ChatBox from "./components/chat/ChatBox";
 import Carriere from "./pages/Carriere";
 import Solutions from "./pages/Solutions";
 import AssuranceEmprunteur from "./pages/AssuranceEmprunteur";
@@ -65,7 +64,6 @@ const App = () => (
             
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <ChatBox />
         </Layout>
       </BrowserRouter>
     </TooltipProvider>

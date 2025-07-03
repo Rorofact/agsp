@@ -61,11 +61,9 @@ const AboutSection = () => {
           
           <div className="relative">
             <div className="relative z-10">
-              <img
-                src="https://www.skolinvest.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoibG01dmhuMHl0MHl0NTc2N25pcTZuZWozN3NtZSIsImRvbWFpbiI6Ind3dy5za29saW52ZXN0LmNvbSJ9.9_BXp5-tYjzMxlWo_FdVgpi5PvWET_ax2UnhRdqjQWg"
-                alt="Alice Goyec - Conseillère en gestion de patrimoine"
-                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
-              />
+              <div className="w-full max-w-md mx-auto rounded-lg shadow-lg bg-french-cream aspect-square flex items-center justify-center">
+                <span className="text-6xl font-semibold text-french-navy">AG</span>
+              </div>
             </div>
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-french-gold/20 rounded-full"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-french-navy/10 rounded-full"></div>
