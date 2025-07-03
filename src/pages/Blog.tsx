@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { CalendarIcon, Clock, User } from "lucide-react";
@@ -86,6 +85,10 @@ const Blog = () => {
   // Regular posts (excluding the featured one)
   const regularPosts = blogPosts.slice(1);
 
+  const handleArticleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="py-12">
       <div className="container mx-auto px-4">
@@ -129,7 +132,7 @@ const Blog = () => {
                     <span>{featuredPost.readTime}</span>
                   </div>
                 </div>
-                <Link to={`/blog/${featuredPost.id}`}>
+                <Link to={`/blog/${featuredPost.id}`} onClick={handleArticleClick}>
                   <Button className="w-fit bg-french-navy hover:bg-french-navy/90">
                     Lire l'Article
                   </Button>
@@ -170,7 +173,7 @@ const Blog = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Link to={`/blog/${post.id}`}>
+                <Link to={`/blog/${post.id}`} onClick={handleArticleClick}>
                   <Button variant="ghost" className="text-french-navy hover:text-french-gold hover:bg-transparent p-0">
                     Lire l'Article →
                   </Button>

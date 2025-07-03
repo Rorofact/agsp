@@ -1,135 +1,74 @@
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Medal, PhoneCall, Calendar, Building } from "lucide-react";
+import { ArrowRight, Users, Target, Shield, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-french-cream">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-french-navy mb-4">Qui Suis-je</h2>
-          <p className="text-french-gray max-w-2xl mx-auto">
-            Découvrez mon parcours et mon approche en tant que conseillère en gestion de patrimoine
-          </p>
-        </div>
-        
-        <div className="flex flex-col lg:flex-row items-center gap-10">
-          <div className="w-full lg:w-1/3">
-            <div className="rounded-xl overflow-hidden shadow-lg bg-white">
-              <div className="aspect-w-3 aspect-h-4 bg-french-cream">
-                <div className="flex items-center justify-center h-full py-8">
-                  <div className="w-24 h-24 bg-french-navy rounded-full"></div>
-                </div>
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="text-2xl font-bold text-french-navy mb-2">Alice Goyec</h3>
-                <p className="text-french-gray font-medium">Conseillère en Gestion de Patrimoine</p>
-                
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center">
-                    <Medal className="h-5 w-5 text-french-gold mr-3" />
-                    <span>10+ ans d'expérience</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Building className="h-5 w-5 text-french-gold mr-3" />
-                    <span>Capacités IAS, IOBSP, CIF, IMMO</span>
-                  </div>
-                  <div className="flex items-center">
-                    <PhoneCall className="h-5 w-5 text-french-gold mr-3" />
-                    <span>Membre de la CNCEF Patrimoine</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar className="h-5 w-5 text-french-gold mr-3" />
-                    <span>Inscrite à l'ORIAS sous le n° 25005313</span>
-                  </div>
-                </div>
-                
-                <Button className="w-full mt-6 bg-french-navy text-white">
-                  <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
-                    Me contacter
-                  </a>
-                </Button>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-french-navy">Qui suis-je?</h2>
+              <p className="text-lg text-french-gray">
+                Alice Goyec, conseillère en gestion de patrimoine, je vous accompagne dans la réalisation de vos projets financiers et patrimoniaux avec une approche personnalisée et professionnelle.
+              </p>
+              <p className="text-french-gray">
+                Fort de plusieurs années d'expérience dans le secteur financier, je mets mon expertise au service de votre réussite patrimoniale. Ma mission est de vous aider à optimiser votre patrimoine et à préparer sereinement votre avenir.
+              </p>
             </div>
-          </div>
-
-          <div className="w-full lg:w-2/3">
-            <h3 className="text-2xl font-bold text-french-navy mb-6">Mon approche</h3>
             
-            <div className="space-y-6 mb-8">
-              <p className="text-lg">
-                Diplômée en commerce et finance avec une spécialisation en finance internationale, j'ai travaillé 10 ans en banque d'investissement. Tout d'abord en tant qu'analyste risque crédit au sein du groupe bancaire BPCE. Ma mission consistait en l'analyse des comptes de banques et d'entreprise afin de s'assurer de leur solidité financière.
-              </p>
-              
-              <p className="text-lg">
-                Puis, j'ai traversé l'Atlantique et rejoins Dexia Crédit Local à New York en financement de projet d'infrastructure comme des hôpitaux, des champs éoliens, des autoroutes entre autres, situés en Amérique du nord et du sud. Et enfin, j'ai exercé en tant qu'assistant trader sur les produits structurés chez Société Générale.
-              </p>
-              
-              <p className="text-lg">
-                J'ai ensuite voulu me reconnecter à l'économie réelle et pouvoir mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne.
-              </p>
-
-              <p className="text-lg">
-                Aujourd'hui j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
-              </p>
-
-              <p className="text-lg">
-                Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence.
-              </p>
-
-              <p className="text-lg">
-                Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="p-6 border-l-4 border-french-gold">
-                <h4 className="text-xl font-bold text-french-navy mb-3">Ma formation</h4>
-                <ul className="list-disc list-inside space-y-2 text-french-gray">
-                  <li>Master Grande Ecole Spé Finance Internationale</li>
-                  <li>Double diplôme de l'ESC Pau et de la London School of Economics.</li>
-                  <li>Certification AMF</li>
-                  <li>Formation continue en ingénierie patrimonial</li>
-                </ul>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="border-french-gold/20">
+                <CardContent className="p-4 text-center">
+                  <Users className="h-8 w-8 text-french-gold mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-french-navy">500+</div>
+                  <div className="text-sm text-french-gray">Clients accompagnés</div>
+                </CardContent>
               </Card>
-              
-              <Card className="p-6 border-l-4 border-french-gold">
-                <h4 className="text-xl font-bold text-french-navy mb-3">Mes domaines d'expertise</h4>
-                <ul className="list-disc list-inside space-y-2 text-french-gray">
-                  <li>Conseil en investissement (tout type d'actifs)</li>
-                  <li>Optimisation fiscale</li>
-                  <li>Optimisation trésorerie d'entreprise</li>
-                  <li>Transmission de patrimoine</li>
-                  <li>Protection familiale</li>
-                </ul>
+              <Card className="border-french-gold/20">
+                <CardContent className="p-4 text-center">
+                  <Target className="h-8 w-8 text-french-gold mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-french-navy">95%</div>
+                  <div className="text-sm text-french-gray">Clients satisfaits</div>
+                </CardContent>
+              </Card>
+              <Card className="border-french-gold/20">
+                <CardContent className="p-4 text-center">
+                  <Shield className="h-8 w-8 text-french-gold mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-french-navy">10+</div>
+                  <div className="text-sm text-french-gray">Années d'expérience</div>
+                </CardContent>
+              </Card>
+              <Card className="border-french-gold/20">
+                <CardContent className="p-4 text-center">
+                  <TrendingUp className="h-8 w-8 text-french-gold mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-french-navy">8.5%</div>
+                  <div className="text-sm text-french-gray">Rendement moyen</div>
+                </CardContent>
               </Card>
             </div>
+            
+            <Link to="/about">
+              <Button className="bg-french-gold hover:bg-french-gold/90 text-white">
+                En savoir plus
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
-        </div>
-        
-        <div className="mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6 shadow-md bg-white">
-              <p className="italic text-french-gray mb-4">
-                "Grâce aux conseils d'Alice, j'ai pu optimiser ma fiscalité et préparer sereinement ma retraite. Un accompagnement professionnel et personnalisé que je recommande vivement."
-              </p>
-              <p className="font-semibold">Sophie M., cadre dirigeante</p>
-            </Card>
-            
-            <Card className="p-6 shadow-md bg-white">
-              <p className="italic text-french-gray mb-4">
-                "Une conseillère à l'écoute qui a su comprendre mes objectifs patrimoniaux et me proposer des solutions sur mesure. Une vraie relation de confiance s'est établie."
-              </p>
-              <p className="font-semibold">Michel D., entrepreneur</p>
-            </Card>
-            
-            <Card className="p-6 shadow-md bg-white">
-              <p className="italic text-french-gray mb-4">
-                "Je cherchais une experte pour m'accompagner dans la transmission de mon entreprise. Alice m'a guidé avec professionnalisme et efficacité tout au long du processus."
-              </p>
-              <p className="font-semibold">Philippe L., chef d'entreprise</p>
-            </Card>
+          
+          <div className="relative">
+            <div className="relative z-10">
+              <img
+                src="https://www.skolinvest.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoibG01dmhuMHl0MHl0NTc2N25pcTZuZWozN3NtZSIsImRvbWFpbiI6Ind3dy5za29saW52ZXN0LmNvbSJ9.9_BXp5-tYjzMxlWo_FdVgpi5PvWET_ax2UnhRdqjQWg"
+                alt="Alice Goyec - Conseillère en gestion de patrimoine"
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-french-gold/20 rounded-full"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-french-navy/10 rounded-full"></div>
           </div>
         </div>
       </div>

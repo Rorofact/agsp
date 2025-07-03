@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -174,7 +173,7 @@ const AssuranceEmprunteur = () => {
             Vous souhaitez faire baisser le coût de votre prêt immobilier ?
           </p>
           <Button asChild size="lg" className="bg-french-gold hover:bg-french-gold/90">
-            <a href="/rendez-vous">Prendre rendez-vous</a>
+            <a href="https://calendly.com/agstrategiepatrimoine/30min?month=2025-07" target="_blank" rel="noopener noreferrer">Prendre rendez-vous</a>
           </Button>
         </div>
       </div>
