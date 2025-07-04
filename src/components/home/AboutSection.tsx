@@ -5,7 +5,7 @@ import { Star, Calendar, Award, Building2, CheckCircle } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-yellow-100">
       <div className="container mx-auto px-4">
         {/* Title and subtitle centered */}
         <div className="text-center mb-12">
@@ -87,10 +87,10 @@ const AboutSection = () => {
                   <CardContent className="p-6">
                     <h4 className="text-xl font-bold text-french-navy mb-4">Ma formation</h4>
                     <div className="space-y-2 text-french-gray">
-                      <p>• Master Grande Ecole Spé Finance Internationale</p>
-                      <p>• Double diplôme de l'ESC Pau et de la London School of Economics</p>
-                      <p>• Certification AMF</p>
-                      <p>• Formation continue en ingénierie patrimonial</p>
+                      <p>Master Grande Ecole Spé Finance Internationale</p>
+                      <p>Double diplôme de l'ESC Pau et de la London School of Economics</p>
+                      <p>Certification AMF</p>
+                      <p>Formation continue en ingénierie patrimonial</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -99,11 +99,11 @@ const AboutSection = () => {
                   <CardContent className="p-6">
                     <h4 className="text-xl font-bold text-french-navy mb-4">Mes domaines d'expertise</h4>
                     <div className="space-y-2 text-french-gray">
-                      <p>• Conseil en investissement (tout type d'actifs)</p>
-                      <p>• Optimisation fiscale</p>
-                      <p>• Optimisation trésorerie d'entreprise</p>
-                      <p>• Transmission de patrimoine</p>
-                      <p>• Protection familiale</p>
+                      <p>Conseil en investissement (tout type d'actifs)</p>
+                      <p>Optimisation fiscale</p>
+                      <p>Optimisation trésorerie d'entreprise</p>
+                      <p>Transmission de patrimoine</p>
+                      <p>Protection familiale</p>
                     </div>
                   </CardContent>
                 </Card>

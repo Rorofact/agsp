@@ -1,11 +1,10 @@
+
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { ArrowRight, Calculator } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { ArrowRight, Calculator, PiggyBank, Shield, FileCheck, Heart, Search, PresentationChart, Users } from "lucide-react";
 
 const AssuranceEmprunteur = () => {
   const [pret, setPret] = useState({
@@ -47,6 +46,29 @@ const AssuranceEmprunteur = () => {
     });
   };
 
+  const processSteps = [
+    {
+      number: "1",
+      title: "Analyse de votre contrat actuel",
+      description: "Nous étudions vos garanties et vos cotisations actuelles"
+    },
+    {
+      number: "2",
+      title: "Recherche des meilleures offres",
+      description: "Comparaison parmi nos partenaires assureurs"
+    },
+    {
+      number: "3",
+      title: "Présentation des solutions",
+      description: "Proposition personnalisée avec économies réalisables"
+    },
+    {
+      number: "4",
+      title: "Accompagnement complet",
+      description: "Gestion de toutes les démarches administratives"
+    }
+  ];
+
   return (
     <div className="py-12 px-4">
       <div className="container mx-auto">
@@ -55,7 +77,7 @@ const AssuranceEmprunteur = () => {
           Simulez votre prêt immobilier.
         </p>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-16">
           <Card>
             <CardContent className="pt-6 space-y-6">
               <div className="space-y-2">
@@ -167,13 +189,167 @@ const AssuranceEmprunteur = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Section Pourquoi changer d'assurance emprunteur */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-french-navy mb-4">Pourquoi changer d'assurance emprunteur ?</h2>
+            <p className="text-lg text-french-gray">
+              Depuis 2022, vous pouvez résilier votre assurance emprunteur à tout moment
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-french-gold/20 text-center">
+              <CardContent className="p-6">
+                <PiggyBank className="h-12 w-12 text-french-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-french-navy mb-3">Économies importantes</h3>
+                <p className="text-french-gray">
+                  Réalisez jusqu'à 50% d'économies sur vos cotisations d'assurance emprunteur
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-french-gold/20 text-center">
+              <CardContent className="p-6">
+                <Shield className="h-12 w-12 text-french-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-french-navy mb-3">Garanties équivalentes</h3>
+                <p className="text-french-gray">
+                  Bénéficiez de garanties identiques ou supérieures à celles de votre banque
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-french-gold/20 text-center">
+              <CardContent className="p-6">
+                <FileCheck className="h-12 w-12 text-french-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-french-navy mb-3">Changement simplifié</h3>
+                <p className="text-french-gray">
+                  Nous nous occupons de toutes les démarches pour votre changement d'assurance
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-french-gold/20 text-center">
+              <CardContent className="p-6">
+                <Heart className="h-12 w-12 text-french-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-french-navy mb-3">Sans engagement</h3>
+                <p className="text-french-gray">
+                  Étude offerte et sans engagement de votre part
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Section Notre processus */}
+        <section className="mb-16 bg-gray-50 py-12 px-6 rounded-lg">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-french-navy mb-4">Notre processus</h2>
+            <p className="text-lg text-french-gray">
+              Un accompagnement complet pour optimiser votre assurance emprunteur
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-8 top-12 bottom-12 w-0.5 bg-french-gold hidden md:block"></div>
+              
+              <div className="space-y-8">
+                {processSteps.map((step, index) => (
+                  <div key={index} className="relative flex items-center gap-6">
+                    {/* Step number circle */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-french-gold text-white rounded-full flex items-center justify-center font-bold text-xl z-10">
+                      {step.number}
+                    </div>
+                    
+                    {/* Step content */}
+                    <Card className="flex-1 border-french-gold/20">
+                      <CardContent className="p-6">
+                        <h3 className="text-xl font-bold text-french-navy mb-2">{step.title}</h3>
+                        <p className="text-french-gray">{step.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section Qui peut en bénéficier */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-french-navy mb-4">Qui peut en bénéficier ?</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Card className="border-french-gold/20">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-french-navy mb-4">Éligibilité</h3>
+                <div className="space-y-2 text-french-gray">
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Tous les emprunteurs, quel que soit l'âge du prêt</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Prêts immobiliers résidence principale ou investissement</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Prêts professionnels et SCI</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Rachat de crédits avec assurance</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-french-gold/20">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-french-navy mb-4">Important à savoir</h3>
+                <div className="space-y-2 text-french-gray">
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Résiliation possible à tout moment depuis 2022</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Garanties équivalentes obligatoires</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Aucune pénalité de la banque</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Économies immédiates dès la substitution</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-french-gold">•</span>
+                    <span>Processus entièrement géré par nos soins</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
         
         <div className="text-center mt-12">
+          <h2 className="text-2xl font-bold text-french-navy mb-4">
+            Prêt à économiser sur votre assurance emprunteur ?
+          </h2>
           <p className="text-french-gray mb-6">
-            Vous souhaitez faire baisser le coût de votre prêt immobilier ?
+            Obtenez une étude personnalisée et offerte en moins de 48h
           </p>
           <Button asChild size="lg" className="bg-french-gold hover:bg-french-gold/90">
-            <a href="https://calendly.com/agstrategiepatrimoine/30min?month=2025-07" target="_blank" rel="noopener noreferrer">Prendre rendez-vous</a>
+            <a href="https://calendly.com/agstrategiepatrimoine/30min?month=2025-07" target="_blank" rel="noopener noreferrer">
+              Demander mon étude offerte
+            </a>
           </Button>
         </div>
       </div>
