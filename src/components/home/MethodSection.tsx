@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
 
 const MethodSection = () => {
   const steps = [
@@ -56,11 +55,6 @@ const MethodSection = () => {
                       <p className="text-french-gray">{step.description}</p>
                     </CardContent>
                   </Card>
-                  
-                  {/* Arrow for larger screens */}
-                  {index < steps.length - 1 && (
-                    <ArrowRight className="hidden lg:block h-6 w-6 text-french-gold absolute right-4" />
-                  )}
                 </div>
               ))}
             </div>

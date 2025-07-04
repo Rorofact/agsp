@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
-import { ArrowRight, Calculator, PiggyBank, Shield, FileCheck, Heart, Search, PresentationChart, Users } from "lucide-react";
+import { ArrowRight, Calculator, PiggyBank, Shield, FileCheck, Heart, Search, Users } from "lucide-react";
 
 const AssuranceEmprunteur = () => {
   const [pret, setPret] = useState({
