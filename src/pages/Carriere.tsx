@@ -10,7 +10,9 @@ const Carriere = () => {
         <h1 className="page-title text-center mb-4">Devenez Conseiller Patrimonial</h1>
         <p className="subtitle text-center mx-auto max-w-3xl mb-12">
           Nous aidons les talents passionnés par l'investissement à lancer leur cabinet de gestion de patrimoine.
+          <br />
           Le cabinet AG Stratégie Patrimoine, vous accompagne dans votre parcours et vous aide à monter en compétence jusqu'à ce que vous vous sentiez prêt à gérer votre cabinet de manière autonome.
+          <br />
           Vous trouverez ci-dessous, les différentes offres.
         </p>
 
@@ -126,15 +128,15 @@ const Carriere = () => {
                   <div>
                     <h4 className="font-semibold text-french-navy mb-3">Description</h4>
                     <p className="text-french-gray">
-                      Le Consultant Patrimoine anime l'expérience client Filianse, découvre les besoins patrimoniaux et accompagne dans les projets d'investissement.
+                      Le Consultant Patrimoine anime l'expérience client, découvre les besoins patrimoniaux et accompagne dans les projets d'investissement.
                       <br /><br />
-                      Poste idéal pour débuter dans le conseil en patrimoine avec possibilité d'évolution vers conseiller patrimonial senior.
+                      Poste idéal pour débuter dans le conseil en patrimoine avec possibilité d'évolution vers conseiller patrimonial.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-french-navy mb-3">Missions</h4>
                     <ul className="text-french-gray space-y-1">
-                      <li>• Animation de l'expérience client Filianse</li>
+                      <li>• Animation de l'expérience client</li>
                       <li>• Identification des objectifs patrimoniaux</li>
                       <li>• Collaboration avec l'ingénieur patrimonial</li>
                       <li>• Développement d'équipe commerciale</li>
@@ -167,7 +169,7 @@ const Carriere = () => {
                   <div>
                     <h4 className="font-semibold text-french-navy mb-3">Missions</h4>
                     <ul className="text-french-gray space-y-1">
-                      <li>• Introduction à l'expérience Filianse</li>
+                      <li>• Introduction à l'expérience client</li>
                       <li>• Identification des projets de vie</li>
                       <li>• Orientation vers les experts patrimoine</li>
                       <li>• Activité flexible et évolutive</li>

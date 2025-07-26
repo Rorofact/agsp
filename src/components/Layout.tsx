@@ -11,8 +11,10 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <TopHeader />
-      <Navbar />
+      <div className="sticky top-0 z-50">
+        <TopHeader />
+        <Navbar />
+      </div>
       <main className="flex-grow relative">{children}</main>
       <Footer />
     </div>

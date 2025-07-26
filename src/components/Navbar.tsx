@@ -25,6 +25,7 @@ const Navbar = () => {
 
   const handleFAQClick = (e: React.MouseEvent) => {
     if (location.pathname !== '/') {
+      window.location.href = '/#faq';
       return;
     }
     e.preventDefault();

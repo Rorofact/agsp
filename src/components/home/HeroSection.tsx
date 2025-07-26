@@ -18,13 +18,13 @@ const HeroSection = () => {
               <Link to="/services">Nos Services</Link>
             </Button>
             <Button variant="outline" className="border-white hover:bg-white/10 text-french-gold text-lg px-8 py-6">
-              <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2Tad5nNG23b4Ew3pr0HWT_IgAkFjxt9qlrxB4YYvZDwHYgWWflJ1AGS5agvrepcyMhkHhw88ep?gv=true" target="_blank" rel="noopener noreferrer">
                 Bilan Patrimonial offert
               </a>
             </Button>
           </div>
           <p className="text-lg mt-6 text-french-gold font-semibold">
-            10 ans d'expérience. Conseil indépendant
+            10 ans d'expérience&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conseil indépendant
           </p>
         </div>
       </div>
