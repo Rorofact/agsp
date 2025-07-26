@@ -361,7 +361,7 @@ const ServiceDetail = () => {
                 Bénéficiez d'un accompagnement personnalisé adapté à vos besoins spécifiques et vos objectifs patrimoniaux.
               </p>
               <div className="space-y-4">
-                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-french-gold hover:bg-french-gold/90 flex items-center justify-center">
                     <Calendar className="mr-2 h-4 w-4" />
                     Prendre Rendez-vous

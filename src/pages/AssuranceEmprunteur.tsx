@@ -343,11 +343,11 @@ const AssuranceEmprunteur = () => {
             Prêt à économiser sur votre assurance emprunteur ?
           </h2>
           <p className="text-french-gray mb-6">
-            Obtenez une étude personnalisée et offerte en moins de 48h
+            Obtenez une étude personnalisée
           </p>
           <Button asChild size="lg" className="bg-french-gold hover:bg-french-gold/90">
-            <a href="https://calendly.com/agstrategiepatrimoine/30min?month=2025-07" target="_blank" rel="noopener noreferrer">
-              Demander mon étude offerte
+            <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
+              Prendre rendez-vous
             </a>
           </Button>
         </div>

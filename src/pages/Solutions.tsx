@@ -34,16 +34,16 @@ const solutionsData = {
       link: "/solutions/assurance-vie"
     },
     {
-      title: "PEA",
-      description: "Plan d'Épargne en Actions pour investir en bourse avec une fiscalité avantageuse.",
+      title: "PER",
+      description: "Plan d'Épargne Retraite pour préparer votre retraite avec des avantages fiscaux.",
       icon: <TrendingUp className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/pea"
+      link: "/solutions/per"
     },
     {
-      title: "Comptes titres",
-      description: "Investissez librement sur les marchés financiers français et internationaux.",
+      title: "Contrat de capitalisation",
+      description: "Solution d'épargne flexible sans contrainte de durée pour optimiser votre patrimoine.",
       icon: <TrendingUp className="h-10 w-10 text-french-gold" />,
-      link: "/solutions/comptes-titres"
+      link: "/solutions/contrat-capitalisation"
     }
   ],
   responsable: [
@@ -132,7 +132,7 @@ const Solutions = () => {
                 ))}
               </div>
               <div className="flex justify-center mt-10">
-                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-french-gold hover:bg-french-gold/90 text-white">
                     Prendre Rendez-vous
                   </Button>

@@ -26,7 +26,7 @@ const FAQSection = () => {
     },
     {
       question: "Travaillez-vous avec tous les profils d'investisseurs ?",
-      answer: "Nous accompagnons tous les profils, du jeune actif souhaitant commencer à investir aux retraités cherchant à optimiser leur patrimoine. Nos solutions s'adaptent à chaque situation."
+      answer: "Nous accompagnons tous les profils, du jeune actif souhaitant commencer à investir aux retraités cherchant à optimiser leur patrimoine. Nous accompagnons également les entrepreneurs et optimisons la gestion de leur trésorerie d'entreprise. Nos solutions s'adaptent à chaque situation."
     }
   ];
 

@@ -786,7 +786,7 @@ const BlogArticle = () => {
             Nos experts en gestion de patrimoine et investissement sont à votre disposition pour vous accompagner dans tous vos projets financiers.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://calendly.com/agstrategiepatrimoine/30min?month=2025-07" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
               <Button className="bg-french-navy hover:bg-french-navy/90">
                 Prendre rendez-vous
               </Button>

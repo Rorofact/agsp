@@ -27,10 +27,10 @@ const AboutSection = () => {
                     <p className="text-lg font-semibold text-french-gold">Conseillière en Gestion de Patrimoine</p>
                     
                     <div className="space-y-3 text-french-gray">
-                      <div className="flex items-center gap-3">
-                        <Calendar className="h-5 w-5 text-french-gold" />
-                        <span>10+ ans d'expérience</span>
-                      </div>
+                       <div className="flex items-center gap-3">
+                         <Calendar className="h-5 w-5 text-french-gold" />
+                         <span>10 ans d'expérience     Conseil indépendant</span>
+                       </div>
                       <div className="flex items-center gap-3">
                         <Award className="h-5 w-5 text-french-gold" />
                         <span>Capacités IAS, IOBSP, CIF, IMMO</span>
@@ -46,7 +46,7 @@ const AboutSection = () => {
                     </div>
                   </div>
                   
-                  <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
                     <Button className="bg-french-gold hover:bg-french-gold/90 text-white w-full">
                       Me contacter
                     </Button>
@@ -61,24 +61,21 @@ const AboutSection = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-french-navy">Mon approche</h3>
               <div className="text-french-gray space-y-4">
-                <p>
-                  Diplômée en commerce et finance avec une spécialisation en finance internationale, j'ai travaillé 10 ans en banque d'investissement. Tout d'abord en tant qu'analyste risque crédit au sein du groupe bancaire BPCE. Ma mission consistait en l'analyse des comptes de banques et d'entreprise afin de s'assurer de leur solidité financière.
-                </p>
-                <p>
-                  Puis, j'ai traversé l'Atlantique et rejoins Dexia Crédit Local à New York en financement de projet d'infrastructure comme des hôpitaux, des champs éoliens, des autoroutes entre autres, situés en Amérique du nord et du sud. Et enfin, j'ai exercé en tant qu'assistant trader sur les produits structurés chez Société Générale.
-                </p>
-                <p>
-                  J'ai ensuite voulu me reconnecter à l'économie réelle et pouvoir mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne.
-                </p>
-                <p>
-                  Aujourd'hui j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
-                </p>
-                <p>
-                  Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence.
-                </p>
-                <p>
-                  Ma philosophie repose sur une approche personnalisée et sur mesure. Je prends le temps d'analyser votre situation actuelle, de comprendre vos objectifs et de vous proposer les solutions les plus adaptées à vos besoins spécifiques.
-                </p>
+                 <p>
+                   Après plus de 10 ans à explorer le monde de l'investissement, que ce soit dans la gestion de mon portefeuille personnel ou dans l'exercice de mes missions en banque d'investissement, j'ai voulu me reconnecter à l'économie réelle et mettre les connaissances accumulées ces 10 années, au service de l'économie française en aidant les français à investir judicieusement leur épargne.
+                 </p>
+                 <p>
+                   Aujourd'hui, j'accompagne donc les particuliers et les entrepreneurs dans l'optimisation et la sécurisation de leur patrimoine.
+                 </p>
+                 <p>
+                   Forte d'une expérience significative auprès de grands groupes bancaires, j'ai développé une expertise approfondie dans le conseil financier et la gestion d'actifs. Ainsi, je m'engage à vous offrir un service d'excellence.
+                 </p>
+                 <p>
+                   Ma philosophie repose sur une approche personnalisée et sur mesure.
+                 </p>
+                 <p>
+                   Je prends le temps d'analyser votre situation actuelle et vos éventuels actifs, de comprendre et préciser vos objectifs et vous propose les solutions les plus adaptées à vos besoins spécifiques.
+                 </p>
               </div>
 
               {/* Formation and Expertise blocks under Mon approche */}

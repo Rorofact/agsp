@@ -77,7 +77,7 @@ const Navbar = () => {
             ))}
 
             <Button className="bg-french-navy text-white hover:bg-french-navy/90">
-              <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
                 Contact
               </a>
             </Button>
@@ -131,7 +131,7 @@ const Navbar = () => {
             ))}
             <div className="pt-2">
               <Button className="w-full bg-french-navy text-white hover:bg-french-navy/90">
-                <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
                   Contact
                 </a>
               </Button>

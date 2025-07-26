@@ -13,7 +13,7 @@ const CTASection = () => {
             Prenez rendez-vous pour un bilan patrimonial gratuit et découvrez comment nous pouvons vous accompagner.
           </p>
           <Button className="bg-french-navy hover:bg-french-navy/90 text-white text-lg px-8 py-6">
-            <a href="https://calendly.com/agstrategiepatrimoine/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SuK203EhNMUBR8RiWozh7HeUCKavBAz_zWUt_BBPJwXXmoA3CfZBJH3E0oy3gHjZCQO_0a1aH?gv=true" target="_blank" rel="noopener noreferrer">
               Bilan Patrimonial offert
             </a>
           </Button>

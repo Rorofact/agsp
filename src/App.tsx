@@ -21,8 +21,8 @@ import InvestissementLocatif from "./pages/solutions/InvestissementLocatif";
 import SCPI from "./pages/solutions/SCPI";
 import ImmobilierDefiscalisant from "./pages/solutions/ImmobilierDefiscalisant";
 import AssuranceVie from "./pages/solutions/AssuranceVie";
-import PEA from "./pages/solutions/PEA";
-import ComptesTitres from "./pages/solutions/ComptesTitres";
+import PER from "./pages/solutions/PER";
+import ContratCapitalisation from "./pages/solutions/ContratCapitalisation";
 import FondsISR from "./pages/solutions/FondsISR";
 import EnergiesRenouvelables from "./pages/solutions/EnergiesRenouvelables";
 import ForetsTerresAgricoles from "./pages/solutions/ForetsTerresAgricoles";
@@ -54,8 +54,8 @@ const App = () => (
             <Route path="/solutions/scpi" element={<SCPI />} />
             <Route path="/solutions/immobilier-defiscalisant" element={<ImmobilierDefiscalisant />} />
             <Route path="/solutions/assurance-vie" element={<AssuranceVie />} />
-            <Route path="/solutions/pea" element={<PEA />} />
-            <Route path="/solutions/comptes-titres" element={<ComptesTitres />} />
+            <Route path="/solutions/per" element={<PER />} />
+            <Route path="/solutions/contrat-capitalisation" element={<ContratCapitalisation />} />
             <Route path="/solutions/fonds-isr" element={<FondsISR />} />
             <Route path="/solutions/energies-renouvelables" element={<EnergiesRenouvelables />} />
             <Route path="/solutions/forets-terres-agricoles" element={<ForetsTerresAgricoles />} />

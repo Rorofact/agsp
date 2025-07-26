@@ -7,16 +7,12 @@ const Carriere = () => {
   return (
     <div className="py-12 px-4">
       <div className="container mx-auto">
-        <h1 className="page-title text-center mb-4">Aidez les français à investir judicieusement leur épargne en devenant CGP</h1>
+        <h1 className="page-title text-center mb-4">Devenez Conseiller Patrimonial</h1>
         <p className="subtitle text-center mx-auto max-w-3xl mb-12">
-          J'aide les talents passionnés par l'investissement à lancer leur cabinet de gestion de patrimoine, pour en savoir plus n'hésitez pas à me contacter.
+          Nous aidons les talents passionnés par l'investissement à lancer leur cabinet de gestion de patrimoine.
+          Le cabinet AG Stratégie Patrimoine, vous accompagne dans votre parcours et vous aide à monter en compétence jusqu'à ce que vous vous sentiez prêt à gérer votre cabinet de manière autonome.
+          Vous trouverez ci-dessous, les différentes offres.
         </p>
-        
-        <div className="text-center mb-12">
-          <p className="text-lg text-french-gray max-w-2xl mx-auto mb-12">
-            Nous recherchons des talents passionnés par la gestion de patrimoine pour accompagner nos clients dans la réalisation de leurs objectifs financiers.
-          </p>
-        </div>
 
         {/* Avantages Section */}
         <div className="mb-16">
@@ -82,7 +78,7 @@ const Carriere = () => {
 
         {/* Nos postes Section */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-french-navy text-center mb-8">Nos postes</h2>
+          <h2 className="text-2xl font-bold text-french-navy text-center mb-8">Nos offres</h2>
           <div className="space-y-8">
             {/* Conseiller Patrimonial */}
             <Card className="border-2 hover:border-french-gold transition-all">
